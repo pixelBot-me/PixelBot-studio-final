@@ -43,8 +43,7 @@ export default function Header() {
                                     key={index}
                                     className="nav-item"
                                     onMouseEnter={() => setMenuOpen(index)}
-                                    onMouseLeave={() => setMenuOpen(null)}
-                                >
+                                    onMouseLeave={() => setMenuOpen(null)}>
                                     <Nav.Link href="#">{item}</Nav.Link>
                                     {menuOpen === index && (
                                         <div className="submenu">
