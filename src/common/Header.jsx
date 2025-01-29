@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Container, Navbar, Nav, Button, Card } from "react-bootstrap";
 import '../assets/css/header.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+import logoDark from "../assets/images/PixelBot_Logo_Dark.svg";
+import logoLight from "../assets/images/PixelBot_Logo_White.svg";
 
 export default function Header() {
     const [scrolling, setScrolling] = useState(false);
@@ -28,7 +30,7 @@ export default function Header() {
                 <Container>
                     <Navbar.Brand>
                         <img
-                            src={scrolling ? "/logo-dark.png" : "/logo-light.png"}
+                            src={scrolling ? logoDark : logoLight}
                             alt="Logo"
                             className="logo"
                         />
@@ -46,9 +48,9 @@ export default function Header() {
                                     <Nav.Link href="#">{item}</Nav.Link>
                                     {menuOpen === index && (
                                         <div className="submenu">
-                                            <div className="submenu-item">Option 1</div>
-                                            <div className="submenu-item">Option 2</div>
-                                            <div className="submenu-item">Option 3</div>
+                                            <div className="submenu-item">home1</div>
+                                            <div className="submenu-item">home 2</div>
+                                            <div className="submenu-item">home 3</div>
                                         </div>
                                     )}
                                 </div>
