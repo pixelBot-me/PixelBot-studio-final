@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Row } from 'reactstrap'
+import '../../assets/css/header.css'
 
 export default function Home() {
     return (
