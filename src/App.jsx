@@ -5,8 +5,6 @@ import Footer from './common/Footer'
 import Header from './common/Header'
 // import './App.css'
 
-
-
 function App() {
   const [count, setCount] = useState(0)
 
