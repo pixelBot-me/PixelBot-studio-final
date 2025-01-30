@@ -37,7 +37,6 @@ export default function Footer() {
                                 <a href="#" className='text-decoration-none text-white'>Services</a>
                             </div>
 
-
                         </div>
                         <div className="footer-col">
                             <div className='my-3'>
@@ -52,7 +51,6 @@ export default function Footer() {
                             </div>  <div className='py-3'>
                                 <a href="#" className='text-decoration-none text-white'>Hire Developers</a>
                             </div>
-
 
                         </div>
                         <div className="footer-col">
@@ -90,7 +88,6 @@ export default function Footer() {
                     </div>
                 </Container>
             </footer>
-
         </>
     )
 }
