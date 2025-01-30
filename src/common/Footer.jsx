@@ -82,6 +82,7 @@ export default function Footer() {
                             </div>       
                         </div>
                     </div>
+                    
                     <div className="footer-bottom py-3">
                         <p>&copy; 2025 Your Website</p>
                         <p>Privacy Policy</p>
