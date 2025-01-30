@@ -10,7 +10,7 @@ body, html {
     left: 0;
     z-index: 1000;
     transition: all 0.3s ease-in-out;
-    position: absolute; /* Make sure it is initially positioned properly */
+    position: absolute;
 }
 
 .sticky-header.scrolled .top-bar {
@@ -54,38 +54,60 @@ body, html {
     margin: 0 15px;
 }
 
-.nav-link {
+.menu-link {
     color: white !important;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
 
-.sticky-header.scrolled .nav-link {
+.sticky-header.scrolled .menu-link {
     color: black !important;
 }
 
+/* Base styles */
 .submenu {
     position: absolute;
     top: 100%;
     left: 0;
     background: white;
-    padding: 10px;
-    display: none;
-    flex-direction: column;
-    min-width: 150px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    display: none; /* Hide by default */
+    min-width: 200px; /* Set a consistent width */
+    border-radius: 5px;
+    z-index: 1000;
     transition: all 0.3s ease-in-out;
-    border-radius: 25px;
 }
 
 .submenu-item {
-    padding: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
 }
+.submenu-item:last-child {
+    border-bottom: none; /* Remove bottom border from last item */
+}
+
+
+
+/* For better spacing and horizontal alignment */
+.submenu-item a {
+    display: inline-block;
+    padding: 5px 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: normal;
+    transition: color 0.3s ease-in-out;
+}
+
+.submenu-item a:hover {
+    color: #007bff;
+}
 
 .submenu-item:hover {
-    background: #f4f4f4;
+    /* background: #f4f4f4; */
 }
 
 .sticky-top {
@@ -94,19 +116,72 @@ body, html {
     z-index: 1050;
 }
 
-/* Responsive Design */
+/* For Laptop/Desktop: Make menu non-clickable & show submenu */
+@media (min-width: 768px) {
+    .nav-link {
+        pointer-events: none; /* Disable clicks on menu items */
+    }
+
+    .submenu {
+        display: none;
+    }
+    
+    .nav-item:hover .submenu {
+        display: flex;
+        /* flex-direction: column;  */
+        /* Stack submenu items vertically */
+        width: auto;
+        padding: 10px;
+    }
+
+
+}
+
+/* For Mobile Devices: Make menu clickable */
 @media (max-width: 768px) {
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
+    .nav-link {
+        pointer-events: auto; /* Allow clicks on menu items */
     }
 
-    .hero-image {
-        margin-top: 20px;
+    .submenu {
+        display: none;
+        position: relative; /* Position it normally below the parent item */
+        background: white;
+        box-shadow: none;
+        border-radius: 0;
+        min-width: 100%; /* Take full width of screen */
     }
 
-    .floating-cards {
+    .navbar-collapse.show .submenu {
+        display: block;
+        display: flex;
         flex-direction: column;
-        top: 80%;
     }
+
+}
+
+
+.submenu-item {
+    padding: 10px 15px;
+}
+
+.submenu-item a {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* Specific styles for each submenu - Differentiate submenus for each section */
+.submenu-the-company {
+    background-color: #f8f9fa;
+    padding: 15px;
+}
+
+.submenu-about-us {
+    background-color: #e9ecef;
+    padding: 15px;
+}
+
+.submenu-services {
+    background-color: #fff3cd;
+    padding: 15px;
 }

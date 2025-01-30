@@ -50,12 +50,91 @@ export default function Header() {
                                             onMouseEnter={() => setMenuOpen(index)}
                                             onMouseLeave={() => setMenuOpen(null)}
                                         >
-                                            <Nav.Link href="#">{item}</Nav.Link>
+                                            <Nav.Link href="#" className="menu-link">
+                                                {item}
+                                            </Nav.Link>
                                             {menuOpen === index && (
-                                                <div className="submenu">
-                                                    <div className="submenu-item">home1</div>
-                                                    <div className="submenu-item">home 2</div>
-                                                    <div className="submenu-item">home 3</div>
+                                                <div className="submenu d-flex">
+
+                                                    <div className="submenu-item">
+                                                        <h5>The Company</h5>
+                                                        <div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none">Option 1</a>
+                                                        </div>
+                                                        <div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none ">Option 1</a>
+                                                        </div>
+                                                        <div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none ">Option 1</a>
+                                                        </div><div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none ">Option 1</a>
+                                                        </div><div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none ">Option 1</a>
+                                                        </div><div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none ">Option 1</a>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div className="submenu-item">
+                                                        <h5>The Company</h5>
+                                                        <div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none">Option 1</a>
+                                                        </div>
+                                                        <div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none ">Option 1</a>
+                                                        </div>
+                                                        <div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none ">Option 1</a>
+                                                        </div><div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none ">Option 1</a>
+                                                        </div><div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none ">Option 1</a>
+                                                        </div><div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none ">Option 1</a>
+                                                        </div>
+
+
+                                                    </div><div className="submenu-item">
+                                                        <h5>The Company</h5>
+                                                        <div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none">Option 1</a>
+                                                        </div>
+                                                        <div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none ">Option 1</a>
+                                                        </div>
+                                                        <div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none ">Option 1</a>
+                                                        </div><div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none ">Option 1</a>
+                                                        </div><div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none ">Option 1</a>
+                                                        </div><div className="py-1">
+
+                                                            <a href="" className="text-dark text-decoration-none ">Option 1</a>
+                                                        </div>
+
+
+                                                    </div>
+
+
                                                 </div>
                                             )}
                                         </div>
