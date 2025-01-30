@@ -1,36 +1,54 @@
-import React from 'react'
-import { Container, Row } from 'reactstrap'
-import '../../assets/css/header.css'
+import React from 'react';
+import { Container, Row } from 'reactstrap';
+import '../../assets/css/home.css'; // Ensure this file exists for styling
 
 export default function Home() {
     return (
         <>
+            {/* Hero Section */}
+            <section className="hero-section">
+                <Container>
+                    <div className="hero-content">
+                        <div className="hero-text">
+                            <h1>Welcome to Our Website</h1>
+                            <p>Creating Amazing Digital Experiences</p>
+                        </div>
+                        <div className="hero-image">
+                            <img src="/hero-image.png" alt="Hero" />
+                        </div>
+                    </div>
 
+                    {/* Floating Cards */}
+                    <div className="floating-cards">
+                        {["9+", "1600+", "600+", "20+"].map((feature, index) => (
+                            <div key={index} className="feature-card">
+                                <div className="card-body">
+                                    <div className="card-title fs-1">{feature}</div>
+                                    <div className="card-text">Some brief description here.</div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </Container>
+            </section>
+
+            {/* Additional Text Section */}
             <Container>
-
-
                 <Row>
-
                     <div className='text-center py-5'>
-
-                        <h1 className='text-primary fs-1'>Trusted by 600+ and Startups and</h1>
+                        <h1 className='text-primary fs-1'>Trusted by 600+ Startups and</h1>
                         <h1 className='fs-1 py-1'>Enterprises across 20+ Nations</h1>
-
 
                         <div className='py-5'>
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt eligendi temporibus ut, quibusdam ipsam ratione vitae commodi, consequuntur aut officia sint illum? Nostrum fugit labore consequatur officiis unde maxime accusantium.
                         </div>
 
                         <div>
-                            <a href="#" className='text-decoration-none text-primary fs-5 py-5'>learn more about us →</a>
+                            <a href="#" className='text-decoration-none text-primary fs-5 py-5'>Learn more about us →</a>
                         </div>
-
                     </div>
-
                 </Row>
             </Container>
-
-
         </>
-    )
+    );
 }

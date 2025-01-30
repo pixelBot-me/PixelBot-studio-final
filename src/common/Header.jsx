@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Container, Navbar, Nav, Button, Card } from "react-bootstrap";
-import '../assets/css/header.css';
+import { Container, Navbar, Nav, Button } from "react-bootstrap";
+import "../assets/css/header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logoDark from "../assets/images/PixelBot_Logo_Dark.svg";
 import logoLight from "../assets/images/PixelBot_Logo_White.svg";
@@ -23,68 +23,52 @@ export default function Header() {
             {/* Sticky Header with Top Bar & Navbar */}
             <div className={`sticky-header ${scrolling ? "scrolled" : ""}`}>
                 {/* Top Bar */}
-                <div className="top-bar">
-                    <p className="text-center">Welcome to Our Website</p>
-                </div>
+                {!scrolling && (
+                    <div className="top-bar">
+                        <p className="text-center">Welcome to Our Website</p>
+                    </div>
+                )}
 
                 {/* Navbar */}
-                <Navbar expand="lg" className="main-navbar">
+                <Navbar expand="lg" className={`main-navbar ${scrolling ? "sticky-top" : ""}`}>
                     <Container>
                         <Navbar.Brand>
-                            <img src={scrolling ? logoDark : logoLight} alt="Logo" className="logo" />
+                            <img
+                                src={scrolling ? logoDark : logoLight}
+                                alt="Logo"
+                                className="logo"
+                            />
                         </Navbar.Brand>
                         <Navbar.Toggle onClick={() => setMobileMenu(!mobileMenu)} />
                         <Navbar.Collapse className={mobileMenu ? "show" : ""}>
                             <Nav className="mx-auto">
-                                {["Home", "About", "Services", "Portfolio", "Blog", "Contact"].map((item, index) => (
-                                    <div
-                                        key={index}
-                                        className="nav-item"
-                                        onMouseEnter={() => setMenuOpen(index)}
-                                        onMouseLeave={() => setMenuOpen(null)}>
-                                        <Nav.Link href="#">{item}</Nav.Link>
-                                        {menuOpen === index && (
-                                            <div className="submenu">
-                                                <div className="submenu-item">home1</div>
-                                                <div className="submenu-item">home 2</div>
-                                                <div className="submenu-item">home 3</div>
-                                            </div>
-                                        )}
-                                    </div>
-                                ))}
+                                {["Home", "About", "Services", "Portfolio", "Blog", "Contact"].map(
+                                    (item, index) => (
+                                        <div
+                                            key={index}
+                                            className="nav-item"
+                                            onMouseEnter={() => setMenuOpen(index)}
+                                            onMouseLeave={() => setMenuOpen(null)}
+                                        >
+                                            <Nav.Link href="#">{item}</Nav.Link>
+                                            {menuOpen === index && (
+                                                <div className="submenu">
+                                                    <div className="submenu-item">home1</div>
+                                                    <div className="submenu-item">home 2</div>
+                                                    <div className="submenu-item">home 3</div>
+                                                </div>
+                                            )}
+                                        </div>
+                                    )
+                                )}
                             </Nav>
-                            <Button variant="danger" className="contact-btn">Get in Touch</Button>
+                            <Button variant="danger" className="contact-btn">
+                                Get in Touch
+                            </Button>
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
             </div>
-
-            {/* Hero Section */}
-            <section className="hero-section">
-                <Container>
-                    <div className="hero-content">
-                        <div className="hero-text">
-                            <h1>Welcome to Our Website</h1>
-                            <p>Creating Amazing Digital Experiences</p>
-                        </div>
-                        <div className="hero-image">
-                            <img src="/hero-image.png" alt="Hero" />
-                        </div>
-                    </div>
-
-                    {/* Floating Cards */}
-                    <div className="floating-cards">
-                        {["9+", "1600+", "600+", "20+"].map((feature, index) => (
-                            <Card key={index} className="feature-card">
-                                <Card.Body>
-                                    <Card.Title className="fs-1">{feature}</Card.Title>
-                                    <Card.Text>Some brief description here.</Card.Text>
-                                </Card.Body>
-                            </Card>
-                        ))}
-                    </div>
-                </Container>
-            </section>
         </>
     );
 }
