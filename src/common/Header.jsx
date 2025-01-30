@@ -24,8 +24,15 @@ export default function Header() {
             <div className={`sticky-header ${scrolling ? "scrolled" : ""}`}>
                 {/* Top Bar */}
                 {!scrolling && (
-                    <div className="top-bar">
-                        <p className="text-center">Welcome to Our Website</p>
+                    <div className="top-bar d-flex justify-content-center">
+                        {/* <p className="text-center">Welcome to Our Website</p> */}
+                        <div>
+                            📩 &nbsp;
+                            <a href="mailto:info@pixelbotstudio.com" className="text-decoration-none text-white">info@pixelbotstudio.com  &nbsp;| </a>
+                        </div>
+                        <div>
+                            <a href="tel:+91-8446297665" className="text-decoration-none text-white"> &nbsp;+91-8446297665</a>
+                        </div>
                     </div>
                 )}
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row } from 'reactstrap';
 import '../../assets/css/home.css'; // Ensure this file exists for styling
+import pixelBotLogo from '../../assets/images/PixelBot_Logo_White.svg'
 
 export default function Home() {
     return (
@@ -10,11 +11,11 @@ export default function Home() {
                 <Container>
                     <div className="hero-content">
                         <div className="hero-text">
-                            <h1>Welcome to Our Website</h1>
+                            <h1>PIXELBOT STUDIO</h1>
                             <p>Creating Amazing Digital Experiences</p>
                         </div>
                         <div className="hero-image">
-                            <img src="/hero-image.png" alt="Hero" />
+                            <img src={pixelBotLogo} alt="Hero" width={100} height={100}/>
                         </div>
                     </div>
 
