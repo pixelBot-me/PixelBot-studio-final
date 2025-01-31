@@ -4,11 +4,14 @@ import "../assets/css/header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logoDark from "../assets/images/PixelBot_Logo_Dark.svg";
 import logoLight from "../assets/images/PixelBot_Logo_White.svg";
+import { Accordion, Card } from "react-bootstrap";
+
 
 export default function Header() {
     const [scrolling, setScrolling] = useState(false);
     const [menuOpen, setMenuOpen] = useState(null);
     const [mobileMenu, setMobileMenu] = useState(false);
+    const [selectedService, setSelectedService] = useState(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -17,6 +20,22 @@ export default function Header() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const services = [
+        { id: 1, name: "Software Development", details: "1 Detailed content for Software Development." },
+        { id: 2, name: "Digital Marketing", details: "2 Detailed content for Digital Marketing." },
+        { id: 3, name: "UI/UX Design", details: "3 Detailed content for UI/UX Design." },
+        { id: 4, name: "Cloud Services", details: "4 Detailed content for Cloud Services." },
+        { id: 5, name: "Data Analytics", details: "5 Detailed content for Data Analytics." },
+    ];
+    useEffect(() => {
+        setSelectedService(services[0]); // Set the first service by default
+    }, []);
+
+
+    const handleServiceClick = (service) => {
+        setSelectedService(service);
+    };
 
     return (
         <>
@@ -103,63 +122,60 @@ export default function Header() {
                                         Services
                                     </Nav.Link>
                                     {menuOpen === 1 && (
-                                        <div className="submenu d-flex flex-column">
-                                            <h4 className="text-danger mb-4">The Company</h4>
-                                            {/* Header Row */}
-
-                                            {/* First Column Section */}
-                                            <div className="submenu-row d-flex flex-column mb-4">
-                                                <a href="" className="text-dark text-decoration-none py-2">About Us</a>
-                                                <a href="" className="text-dark text-decoration-none py-2">Clients</a>
-                                                <a href="" className="text-dark text-decoration-none py-2">Careers</a>
+                                        <div className="submenu">
+                                            <div className="submenu-column">
+                                                <h3>OurServices</h3>
+                                                {services.map((service) => (
+                                                    <div key={service.id} onClick={() => handleServiceClick(service)} className="submenu-item">
+                                                        <a href="#" className="text-dark text-decoration-none">{service.name}</a>
+                                                    </div>
+                                                ))}
                                             </div>
+                                            <div className="submenu-column">
+                                                {selectedService && (
+                                                    <>
+                                                        <h5>{selectedService.name}</h5>
+                                                        <p>{selectedService.details}</p>
+                                                        <hr />
+                                                        <div className="d-flex">
+                                                            <div className="stats-item">
 
-                                            {/* Second Column Section */}
-                                            <div className="submenu-column d-flex flex-column ">
-                                                <a href="" className="text-dark text-decoration-none mb-3">Imagination Meets, Implementation</a>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="stats-item text-center">
-                                                        <h2>9+</h2>
-                                                        <p>Years in Business</p>
-                                                    </div>
-                                                    <div className="stats-item text-center">
-                                                        <h2>100+</h2>
-                                                        <p>Dummy Text</p>
-                                                    </div>
-                                                </div>
-                                                <div className="d-flex justify-content-between mt-3">
-                                                    <div className="stats-item text-center">
-                                                        <h2>9+</h2>
-                                                        <p>Years in Business</p>
-                                                    </div>
-                                                    <div className="stats-item text-center">
-                                                        <h2>100+</h2>
-                                                        <p>Dummy Text</p>
-                                                    </div>
-                                                </div>
+                                                                <div>
+                                                                    <a href="#">Link 1</a>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#">Link 2</a>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#">Link 3</a>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#">Link 4</a>
+                                                                </div>                                                                                                                </div>
+                                                            <div className="stats-item">
+
+                                                                <div>
+                                                                    <a href="#">Link 1</a>
+                                                                </div>                                                             <div>
+                                                                    <a href="#">Link 2</a>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#">Link 3</a>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#">Link 4</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </>
+                                                )}
                                             </div>
                                         </div>
+
                                     )}
+
                                 </div>
-                                <div
-                                    className="nav-item"
-                                    onMouseEnter={() => setMenuOpen(2)}
-                                    onMouseLeave={() => setMenuOpen(null)}
-                                >
-                                    <Nav.Link href="#" className="menu-link">
-                                        Services
-                                    </Nav.Link>
-                                    {menuOpen === 2 && (
-                                        <div className="submenu d-flex">
-                                            <div className="submenu-item">
-                                                <a href="" className="text-dark text-decoration-none">Option 1</a>
-                                            </div>
-                                            <div className="submenu-item">
-                                                <a href="" className="text-dark text-decoration-none">Option 2</a>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
+
                                 <div
                                     className="nav-item"
                                     onMouseEnter={() => setMenuOpen(3)}
@@ -168,13 +184,13 @@ export default function Header() {
                                     <Nav.Link href="#" className="menu-link">
                                         Portfolio
                                     </Nav.Link>
-                                    {menuOpen === 3 && (
+                                    {/* {menuOpen === 3 && (
                                         <div className="submenu d-flex">
                                             <div className="submenu-item">
                                                 <a href="" className="text-dark text-decoration-none">Option 1</a>
                                             </div>
                                         </div>
-                                    )}
+                                    )} */}
                                 </div>
                                 <div
                                     className="nav-item"
@@ -184,13 +200,13 @@ export default function Header() {
                                     <Nav.Link href="#" className="menu-link">
                                         Blog
                                     </Nav.Link>
-                                    {menuOpen === 4 && (
+                                    {/* {menuOpen === 4 && (
                                         <div className="submenu d-flex">
                                             <div className="submenu-item">
                                                 <a href="" className="text-dark text-decoration-none">Option 1</a>
                                             </div>
                                         </div>
-                                    )}
+                                    )} */}
                                 </div>
                                 <div
                                     className="nav-item"
@@ -200,13 +216,13 @@ export default function Header() {
                                     <Nav.Link href="#" className="menu-link">
                                         Contact
                                     </Nav.Link>
-                                    {menuOpen === 5 && (
+                                    {/* {menuOpen === 5 && (
                                         <div className="submenu d-flex">
                                             <div className="submenu-item">
                                                 <a href="" className="text-dark text-decoration-none">Option 1</a>
                                             </div>
                                         </div>
-                                    )}
+                                    )} */}
                                 </div>
                             </Nav>
                             <Button variant="danger" className="contact-btn">
