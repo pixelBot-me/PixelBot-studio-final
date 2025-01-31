@@ -72,16 +72,19 @@ body, html {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px 30px;
     display: none;
-    min-width: 250px;
+    min-width: 100%; /* Increased width */
+    width: auto; /* Allow it to expand based on content */
     border-radius: 8px;
     z-index: 1000;
     transition: all 0.3s ease-in-out;
+
 }
 
 .submenu-column {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+    margin-left: 50px
 }
 
 .submenu-column a {
@@ -180,7 +183,9 @@ body, html {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        min-width: 350px; /* Ensure enough space on larger screens */
+      
+        min-width: 100%; /* Increased width */
+        width: auto; /* Allow it to expand based on content */
     }
 
     .submenu-column {

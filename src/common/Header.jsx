@@ -58,42 +58,40 @@ export default function Header() {
                                         Company &darr;
                                     </Nav.Link>
                                     {menuOpen === 0 && (
-                                        <div className="submenu d-flex flex-column">
-                                        <h4 className="text-danger mb-4">The Company</h4>
-                                        {/* Header Row */}
-                                    
-                                        {/* First Column Section */}
-                                        <div className="submenu-row d-flex flex-column mb-4">
-                                            <a href="" className="text-dark text-decoration-none py-2">About Us</a>
-                                            <a href="" className="text-dark text-decoration-none py-2">Clients</a>
-                                            <a href="" className="text-dark text-decoration-none py-2">Careers</a>
-                                        </div>
-                                    
-                                        {/* Second Column Section */}
-                                        <div className="submenu-column d-flex flex-column ">
-                                            <a href="" className="text-dark text-decoration-none mb-3">Imagination Meets, Implementation</a>
-                                            <div className="d-flex justify-content-between">
-                                                <div className="stats-item text-center">
-                                                    <h2>9+</h2>
-                                                    <p>Years in Business</p>
+                                        <div className="submenu d-flex flex-row">
+                                            {/* First Column Section */}
+                                            <div className="submenu-row d-flex flex-column mb-4">
+                                                <h6 className="text-danger mb-4">The Company</h6>
+                                                <a href="" className="text-dark text-decoration-none py-2">About Us</a>
+                                                <a href="" className="text-dark text-decoration-none py-2">Clients</a>
+                                                <a href="" className="text-dark text-decoration-none py-2">Careers</a>
+                                            </div>
+
+                                            {/* Second Column Section */}
+                                            <div className="submenu-column d-flex flex-column ">
+                                                <a href="" className="text-dark text-decoration-none mb-3 text-break">Imagination Meets, Implementation</a>
+                                                <div className="d-flex justify-content-between">
+                                                    <div className="stats-item text-center">
+                                                        <h2>9+</h2>
+                                                        <p>Years in Business</p>
+                                                    </div>
+                                                    <div className="stats-item text-center">
+                                                        <h2>100+</h2>
+                                                        <p>Dummy Text</p>
+                                                    </div>
                                                 </div>
-                                                <div className="stats-item text-center">
-                                                    <h2>100+</h2>
-                                                    <p>Dummy Text</p>
+                                                <div className="d-flex justify-content-between mt-3">
+                                                    <div className="stats-item text-center">
+                                                        <h2>9+</h2>
+                                                        <p>Years in Business</p>
+                                                    </div>
+                                                    <div className="stats-item text-center">
+                                                        <h2>100+</h2>
+                                                        <p>Dummy Text</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="d-flex justify-content-between mt-3">
-                                                <div className="stats-item text-center">
-                                                    <h2>9+</h2>
-                                                    <p>Years in Business</p>
-                                                </div>
-                                                <div className="stats-item text-center">
-                                                    <h2>100+</h2>
-                                                    <p>Dummy Text</p>
-                                                </div>
-                                            </div>
                                         </div>
-                                    </div>
                                     )}
                                 </div>
                                 <div
@@ -102,15 +100,43 @@ export default function Header() {
                                     onMouseLeave={() => setMenuOpen(null)}
                                 >
                                     <Nav.Link href="#" className="menu-link">
-                                        About
+                                        Services
                                     </Nav.Link>
                                     {menuOpen === 1 && (
-                                        <div className="submenu d-flex">
-                                            <div className="submenu-item">
-                                                <a href="" className="text-dark text-decoration-none">Option 1</a>
+                                        <div className="submenu d-flex flex-column">
+                                            <h4 className="text-danger mb-4">The Company</h4>
+                                            {/* Header Row */}
+
+                                            {/* First Column Section */}
+                                            <div className="submenu-row d-flex flex-column mb-4">
+                                                <a href="" className="text-dark text-decoration-none py-2">About Us</a>
+                                                <a href="" className="text-dark text-decoration-none py-2">Clients</a>
+                                                <a href="" className="text-dark text-decoration-none py-2">Careers</a>
                                             </div>
-                                            <div className="submenu-item">
-                                                <a href="" className="text-dark text-decoration-none">Option 2</a>
+
+                                            {/* Second Column Section */}
+                                            <div className="submenu-column d-flex flex-column ">
+                                                <a href="" className="text-dark text-decoration-none mb-3">Imagination Meets, Implementation</a>
+                                                <div className="d-flex justify-content-between">
+                                                    <div className="stats-item text-center">
+                                                        <h2>9+</h2>
+                                                        <p>Years in Business</p>
+                                                    </div>
+                                                    <div className="stats-item text-center">
+                                                        <h2>100+</h2>
+                                                        <p>Dummy Text</p>
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex justify-content-between mt-3">
+                                                    <div className="stats-item text-center">
+                                                        <h2>9+</h2>
+                                                        <p>Years in Business</p>
+                                                    </div>
+                                                    <div className="stats-item text-center">
+                                                        <h2>100+</h2>
+                                                        <p>Dummy Text</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     )}
