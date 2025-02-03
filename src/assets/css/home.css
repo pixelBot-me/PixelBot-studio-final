@@ -33,7 +33,7 @@
 /* Floating Cards */
 .floating-cards {
     position: absolute;
-    top: 90%;
+    top: 95%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
