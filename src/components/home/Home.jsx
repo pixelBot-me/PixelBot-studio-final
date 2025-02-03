@@ -1,11 +1,13 @@
 import React from 'react';
-import { Container, Row } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import '../../assets/css/home.css'; // Ensure this file exists for styling
 import pixelBotLogo from '../../assets/images/PixelBot_Logo_White.svg'
+import Header from '../../common/Header';
 
 export default function Home() {
     return (
         <>
+            <Header/>
             {/* Hero Section */}
             <section className="hero-section">
                 <Container>
@@ -20,9 +22,35 @@ export default function Home() {
                     </div>
 
                     {/* Floating Cards */}
+                    {/* <div className="floating-cards">
+                        <div className="feature-card">
+                            <div className="card-body">
+                                <div className="card-title fs-1">9+</div>
+                                <div className="card-text">Years of Experience</div>
+                            </div>
+                        </div>
+                        <div className="feature-card">
+                            <div className="card-body">
+                                <div className="card-title fs-1">1600+</div>
+                                <div className="card-text">Projects Completed</div>
+                            </div>
+                        </div>
+                        <div className="feature-card">
+                            <div className="card-body">
+                                <div className="card-title fs-1">600+</div>
+                                <div className="card-text">Satisfied Clients</div>
+                            </div>
+                        </div>
+                        <div className="feature-card">
+                            <div className="card-body">
+                                <div className="card-title fs-1">20+</div>
+                                <div className="card-text">Countries Served</div>
+                            </div>
+                        </div>
+                    </div> */}
                     <div className="floating-cards">
                         {["9+", "1600+", "600+", "20+"].map((feature, index) => (
-                            <div key={index} className="feature-card">
+                            <div key={index} className="feature-card shadow bg-body rounded">
                                 <div className="card-body">
                                     <div className="card-title fs-1">{feature}</div>
                                     <div className="card-text">Some brief description here.</div>
@@ -36,7 +64,7 @@ export default function Home() {
             {/* Additional Text Section */}
             <Container>
                 <Row>
-                    <div className='text-center py-5'>
+                    <div className='text-center py-5 top-adjst mt-5'>
                         <h1 className='text-primary fs-1'>Trusted by 600+ Startups and</h1>
                         <h1 className='fs-1 py-1'>Enterprises across 20+ Nations</h1>
 

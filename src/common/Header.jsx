@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import logoDark from "../assets/images/PixelBot_Logo_Dark.svg";
 import logoLight from "../assets/images/PixelBot_Logo_White.svg";
 import { Accordion, Card } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
 
 export default function Header() {
@@ -81,7 +82,7 @@ export default function Header() {
                                             {/* First Column Section */}
                                             <div className="submenu-row d-flex flex-column mb-4">
                                                 <h6 className="text-danger mb-4">The Company</h6>
-                                                <a href="" className="text-dark text-decoration-none py-2">About Us</a>
+                                                <a href="/about-us" className="text-dark text-decoration-none py-2">About Us</a>
                                                 <a href="" className="text-dark text-decoration-none py-2">Clients</a>
                                                 <a href="" className="text-dark text-decoration-none py-2">Careers</a>
                                             </div>
@@ -119,7 +120,7 @@ export default function Header() {
                                     onMouseLeave={() => setMenuOpen(null)}
                                 >
                                     <Nav.Link href="#" className="menu-link">
-                                        Services
+                                        Services &darr;
                                     </Nav.Link>
                                     {menuOpen === 1 && (
                                         <div className="submenu">
