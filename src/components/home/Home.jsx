@@ -50,7 +50,7 @@ export default function Home() {
                     </div> */}
                     <div className="floating-cards">
                         {["9+", "1600+", "600+", "20+"].map((feature, index) => (
-                            <div key={index} className="feature-card">
+                            <div key={index} className="feature-card shadow bg-body rounded">
                                 <div className="card-body">
                                     <div className="card-title fs-1">{feature}</div>
                                     <div className="card-text">Some brief description here.</div>
@@ -64,7 +64,7 @@ export default function Home() {
             {/* Additional Text Section */}
             <Container>
                 <Row>
-                    <div className='text-center py-5'>
+                    <div className='text-center py-5 top-adjst mt-5'>
                         <h1 className='text-primary fs-1'>Trusted by 600+ Startups and</h1>
                         <h1 className='fs-1 py-1'>Enterprises across 20+ Nations</h1>
 

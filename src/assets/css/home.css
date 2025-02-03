@@ -46,8 +46,8 @@
     color: black;
     text-align: center;
     padding: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); */
+    border-radius: 8px;  
 }
 
 /* New section below hero section */
@@ -94,4 +94,15 @@ a.text-primary:hover {
         flex-direction: column;
         top: 95%;
     }
+
+    .feature-card {
+        width: 100%; /* Make cards take full width */
+        box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.1);
+        
+    }
+
+    .top-adjst{
+        margin-top: 140% !important;
+    }
+    
 }
