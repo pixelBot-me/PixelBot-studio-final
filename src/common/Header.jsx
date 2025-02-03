@@ -67,10 +67,10 @@ export default function Header() {
                         </Navbar.Brand>
                         <Navbar.Toggle onClick={() => setMobileMenu(!mobileMenu)} />
                         <Navbar.Collapse className={mobileMenu ? "show" : ""}>
-                            <Nav className="mx-auto">
+                            <Nav className="mx-auto nav-item">
                                 {/* Static Nav Items */}
                                 <div
-                                    className="nav-item"
+                                    className=""
                                     onMouseEnter={() => setMenuOpen(0)}
                                     onMouseLeave={() => setMenuOpen(null)}
                                 >
@@ -78,9 +78,9 @@ export default function Header() {
                                         Company &darr;
                                     </Nav.Link>
                                     {menuOpen === 0 && (
-                                        <div className="submenu d-flex flex-row">
+                                        <div className="submenu d-flex flex-row shadow bg-body rounded">
                                             {/* First Column Section */}
-                                            <div className="submenu-row d-flex flex-column mb-4">
+                                            <div className="submenu-row d-flex flex-column my-4">
                                                 <h6 className="text-danger mb-4">The Company</h6>
                                                 <a href="/about-us" className="text-dark text-decoration-none py-2">About Us</a>
                                                 <a href="" className="text-dark text-decoration-none py-2">Clients</a>
@@ -89,7 +89,7 @@ export default function Header() {
 
                                             {/* Second Column Section */}
                                             <div className="submenu-column d-flex flex-column ">
-                                                <a href="" className="text-dark text-decoration-none mb-3 text-break">Imagination Meets, Implementation</a>
+                                                <a href="" className="text-dark text-decoration-none my-4 text-break">Imagination Meets, Implementation</a>
                                                 <div className="d-flex justify-content-between">
                                                     <div className="stats-item text-center">
                                                         <h2>9+</h2>
