@@ -2,10 +2,12 @@ import React from 'react';
 import { Container, Row } from 'reactstrap';
 import '../../assets/css/home.css'; // Ensure this file exists for styling
 import pixelBotLogo from '../../assets/images/PixelBot_Logo_White.svg'
+import Header from '../../common/Header';
 
 export default function Home() {
     return (
         <>
+            <Header/>
             {/* Hero Section */}
             <section className="hero-section">
                 <Container>
