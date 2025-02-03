@@ -50,8 +50,9 @@ body, html {
 }
 
 .nav-item {
-    position: relative;
+    /* position: relative; */
     margin: 0 15px;
+    /* color: white; */
     /* background-color: red; */
 }
 
@@ -67,14 +68,16 @@ body, html {
 
 .submenu {
     position: absolute;
-    top: 100% ;
-    left: -20% ;
+    top: 80% ;
+    left: 30% ;
     background: white;
     /* box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1); */
     padding: 20px 30px;
     display: none;
-    min-width: 100%; /* Increased width */
-    width: auto; /* Allow it to expand based on content */
+    /* min-width: 10%;  */
+    /* Increased width */
+    /* width: auto;  */
+    /* Allow it to expand based on content */
     border-radius: 8px;
     z-index: 1000;
     transition: all 0.3s ease-in-out;
@@ -101,7 +104,7 @@ body, html {
 .submenu-item {
     flex: 1;
     padding: 10px;
-    text-align: center;
+    /* text-align: center; */
 
     /* padding: 10px 25px; */
     border-bottom: 1px solid #f0f0f0;
@@ -120,10 +123,9 @@ body, html {
     margin-bottom: 1.5rem;
 }
 
-.submenu-item:last-child {
+/* .submenu-item:last-child {
     border-bottom: none; 
-    /* Remove bottom border from last item */
-}
+} */
 
 /* Mega Dropdown Styles */
 .mega-dropdown .dropdown-menu {
@@ -181,11 +183,12 @@ body, html {
 
 @media (min-width: 768px) {
     .submenu {
+        /* background-color: yellow; */
         display: flex;
         flex-direction: row;
         justify-content: space-between;
       
-        min-width: 100%; /* Increased width */
+        min-width: 30%; /* Increased width */
         width: auto; /* Allow it to expand based on content */
     }
 

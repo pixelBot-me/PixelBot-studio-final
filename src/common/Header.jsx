@@ -30,7 +30,7 @@ export default function Header() {
         { id: 5, name: "Data Analytics", details: "5 Detailed content for Data Analytics." },
     ];
     useEffect(() => {
-        setSelectedService(services[0]); // Set the first service by default
+        setSelectedService(services[1]); // Set the first service by default
     }, []);
 
 
@@ -78,7 +78,7 @@ export default function Header() {
                                         Company &darr;
                                     </Nav.Link>
                                     {menuOpen === 0 && (
-                                        <div className="submenu d-flex flex-row shadow bg-body rounded">
+                                        <div className="submenu d-flex flex-row shadow bg-body rounded rounded-4">
                                             {/* First Column Section */}
                                             <div className="submenu-row d-flex flex-column my-4">
                                                 <h6 className="text-danger mb-4">The Company</h6>
@@ -91,21 +91,22 @@ export default function Header() {
                                             <div className="submenu-column d-flex flex-column ">
                                                 <a href="" className="text-dark text-decoration-none my-4 text-break">Imagination Meets, Implementation</a>
                                                 <div className="d-flex justify-content-between">
-                                                    <div className="stats-item text-center">
+                                                    <div className="text-dark">
                                                         <h2>9+</h2>
                                                         <p>Years in Business</p>
                                                     </div>
-                                                    <div className="stats-item text-center">
+                                                    <div className="text-dark">
+
                                                         <h2>100+</h2>
                                                         <p>Dummy Text</p>
                                                     </div>
                                                 </div>
                                                 <div className="d-flex justify-content-between mt-3">
-                                                    <div className="stats-item text-center">
+                                                    <div className="text-dark">
                                                         <h2>9+</h2>
                                                         <p>Years in Business</p>
                                                     </div>
-                                                    <div className="stats-item text-center">
+                                                    <div className="text-dark">
                                                         <h2>100+</h2>
                                                         <p>Dummy Text</p>
                                                     </div>
@@ -123,48 +124,57 @@ export default function Header() {
                                         Services &darr;
                                     </Nav.Link>
                                     {menuOpen === 1 && (
-                                        <div className="submenu">
-                                            <div className="submenu-column">
-                                                <h3>OurServices</h3>
+                                        <div className="submenu shadow bg-body rounded rounded-4">
+                                            <div className="submenu-column text-dark border-end border-1 border-secondary">
+                                                <h3 className="text-primary">Our Services</h3>
                                                 {services.map((service) => (
                                                     <div key={service.id} onClick={() => handleServiceClick(service)} className="submenu-item">
-                                                        <a href="#" className="text-dark text-decoration-none">{service.name}</a>
+                                                        <a
+                                                            href="#"
+                                                            className={`text-decoration-none ${selectedService && selectedService.id === service.id ? 'text-danger' : 'text-dark'}`}
+                                                        >
+                                                            {service.name}
+                                                            {/* {console.log(selectedService.id + "and" + service.id)} */}
+                                                        </a>
                                                     </div>
                                                 ))}
                                             </div>
-                                            <div className="submenu-column">
+                                            <div className="submenu-column px-5">
                                                 {selectedService && (
                                                     <>
-                                                        <h5>{selectedService.name}</h5>
-                                                        <p>{selectedService.details}</p>
+                                                        <div>
+                                                            <h5>{selectedService.name}</h5>
+                                                            <p>{selectedService.details}</p>
+
+                                                        </div>
                                                         <hr />
                                                         <div className="d-flex">
                                                             <div className="stats-item">
 
                                                                 <div>
-                                                                    <a href="#">Link 1</a>
+                                                                    <a href="#" className="text-decoration-none">Link 1</a>
                                                                 </div>
                                                                 <div>
-                                                                    <a href="#">Link 2</a>
+                                                                    <a href="#" className="text-decoration-none">Link 2</a>
                                                                 </div>
                                                                 <div>
-                                                                    <a href="#">Link 3</a>
+                                                                    <a href="#" className="text-decoration-none">Link 3</a>
                                                                 </div>
                                                                 <div>
-                                                                    <a href="#">Link 4</a>
+                                                                    <a href="#" className="text-decoration-none">Link 4</a>
                                                                 </div>                                                                                                                </div>
                                                             <div className="stats-item">
 
                                                                 <div>
-                                                                    <a href="#">Link 1</a>
+                                                                    <a href="#" className="text-decoration-none">Link 1</a>
                                                                 </div>                                                             <div>
-                                                                    <a href="#">Link 2</a>
+                                                                    <a href="#" className="text-decoration-none">Link 2</a>
                                                                 </div>
                                                                 <div>
-                                                                    <a href="#">Link 3</a>
+                                                                    <a href="#" className="text-decoration-none">Link 3</a>
                                                                 </div>
                                                                 <div>
-                                                                    <a href="#">Link 4</a>
+                                                                    <a href="#" className="text-decoration-none">Link 4</a>
                                                                 </div>
                                                             </div>
                                                         </div>
