@@ -138,3 +138,50 @@ a.text-primary:hover {
         margin-top: 140% !important;
     }
 }
+
+/* Add these to your CSS file or a <style> tag in your component */
+
+.sticky-row {
+    position: sticky !important;
+    top: 0;
+    z-index: 60; /* Makes it stay on top when scrolling */
+    background-color: #fff; /* Optional: to ensure the background color */
+  }
+  
+  .overlapping-row {
+    position: relative;
+    z-index: 55;
+    margin-top: -50px; /* Adjust for the overlap effect */
+  }
+  
+  /* Ensure the content below is clearly visible */
+  .bg-white {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .card {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .card-body {
+    position: relative;
+    z-index: 2;
+  }
+  
+
+  /* Ensure the last row has a relative position and overlapping effect */
+.overlapping-last-row {
+    position: relative;
+    z-index: 60; /* Ensures it stays above previous row */
+    margin-top: -50px; /* Adjust as needed to overlap */
+}
+
+/* Optional: if you want to apply sticky effect on last row too */
+.sticky-last-row {
+    position: sticky;
+    top: 0; /* Adjust this depending on your layout */
+    z-index: 60; /* Makes it stay on top when scrolling */
+    background-color: #fff;
+}
