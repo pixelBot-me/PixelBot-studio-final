@@ -1,13 +1,26 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Button, Carousel, Col, Container, Row } from 'react-bootstrap';
 import '../../assets/css/home.css'; // Ensure this file exists for styling
 import pixelBotLogo from '../../assets/images/PixelBot_Logo_White.svg'
 import Header from '../../common/Header';
 
+
+
+
+import image1 from '../../assets/images/swiggy.png';
+import image2 from '../../assets/images/swiggy.png';
+import image3 from '../../assets/images/swiggy.png';
+import image4 from '../../assets/images/swiggy.png';
+import image5 from '../../assets/images/swiggy.png';
+import image6 from '../../assets/images/swiggy.png';
+
+const images = [image1, image2, image3, image4, image5, image6];
+
 export default function Home() {
+    
     return (
         <>
-            <Header/>
+            <Header />
             {/* Hero Section */}
             <section className="hero-section">
                 <Container>
@@ -61,7 +74,7 @@ export default function Home() {
                 </Container>
             </section>
 
-            {/* Additional Text Section */}
+            {/* Text Section */}
             <Container>
                 <Row>
                     <div className='text-center py-5 top-adjst mt-5'>
@@ -76,6 +89,41 @@ export default function Home() {
                             <a href="#" className='text-decoration-none text-primary fs-5 py-5'>Learn more about us →</a>
                         </div>
                     </div>
+                </Row>
+            </Container>
+
+            {/* show branding logos */}
+            <Container>
+                <Row className="image-row">
+                    {images.map((image, index) => (
+                        <Col key={index} className="image-item">
+                            <img src={image} alt={`Image ${index + 1}`} className="flipping-image" />
+                        </Col>
+                    ))}
+                </Row>
+            </Container>
+
+            {/* <Container>
+                <Row>
+                   
+                    <Card style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src={image1} />
+                        <Card.Body>
+                            <Card.Title>Card Title</Card.Title>
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the
+                                bulk of the card's content.
+                            </Card.Text>
+                            <Button variant="primary">Go somewhere</Button>
+                        </Card.Body>
+                    </Card>
+                    
+                </Row>
+            </Container> */}
+            <Container>
+                <Row>
+
+                <div id="app"></div>
                 </Row>
             </Container>
         </>
