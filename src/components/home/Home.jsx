@@ -105,17 +105,17 @@ export default function Home() {
                 </Row>
             </Container>
 
-            <div className="container-fluid bg-secondary my-3">
+            <div className="container-fluid bg-light my-5">
                 <Container>
-                    <div className='text-center text-danger fs-1 fw-bold'>what can we do</div>
+                    <div className='text-center text-primary fs-1 fw-bold'>what can we do</div>
 
-                    <div className='py-3 text-center lh-base'>
+                    <div className='py-3 text-center lh-base '>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ullam tenetur amet beatae minus et temporibus alias iste laboriosam ratione saepe eveniet commodi deserunt, distinctio qui natus sit atque sequi?
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi necessitatibus facilis sed obcaecati inventore sint, expedita nemo, hic a est eius corrupti sit velit in tempora fugit asperiores esse fuga.
                     </div>
 
                     {/* Software Development Row (Sticky Row) */}
-                    <Row className="border border-2 p-3 bg-white sticky-row my-3">
+                    <Row className="border border-2 p-3 bg-white sticky-row">
                         <h1 className=' py-2 '>software development</h1>
                         <div className='d-flex justify-content-between  py-5'>
                             <Card style={{ width: '18rem' }}>
@@ -150,7 +150,7 @@ export default function Home() {
                     </Row>
 
                     {/* Application Development Row (Overlapping Effect) */}
-                    <Row className="p-3 bg-white overlapping-row my-3">
+                    <Row className="p-3 bg-white overlapping-row shadow bg-body rounded">
                         <h1 className=' py-2 '>Application development</h1>
                         <div className='d-flex justify-content-between  py-5'>
                             <Card style={{ width: '18rem' }}>
@@ -185,7 +185,7 @@ export default function Home() {
                     </Row>
 
                     {/* Digital Marketing Row (Overlapping Effect) */}
-                    <Row className="p-3 bg-white overlapping-row my-3">
+                    <Row className="p-3 bg-white overlapping-row shadow bg-body rounded">
                         <h1 className=' py-2 '>Digital Marketing</h1>
                         <div className='d-flex justify-content-between  py-5'>
                             <Card style={{ width: '18rem' }}>
@@ -220,7 +220,7 @@ export default function Home() {
                     </Row>
 
                     {/* Digital Marketing Row (Overlapping Effect) */}
-                    <Row className="p-3 bg-white overlapping-last-row my-3">
+                    <Row className="p-3 bg-white overlapping-last-row shadow bg-body rounded">
                         <h1 className='py-2'>Testing Mode</h1>
                         <div className='d-flex justify-content-between py-5'>
                             <Card style={{ width: '18rem' }}>
