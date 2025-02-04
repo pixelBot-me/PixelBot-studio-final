@@ -1,11 +1,9 @@
-import React from 'react';
-import { Button, Carousel, Col, Container, Row } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Button, Carousel, Col, Container, Row, Card, CardBody, CardImg, CardTitle, CardText } from 'react-bootstrap';
 import '../../assets/css/home.css'; // Ensure this file exists for styling
 import pixelBotLogo from '../../assets/images/PixelBot_Logo_White.svg'
 import Header from '../../common/Header';
-
-
-
+// import Card from 'react-bootstrap/Card';
 
 import image1 from '../../assets/images/swiggy.png';
 import image2 from '../../assets/images/swiggy.png';
@@ -30,7 +28,7 @@ export default function Home() {
                             <p>Creating Amazing Digital Experiences</p>
                         </div>
                         <div className="hero-image">
-                            <img src={pixelBotLogo} alt="Hero" width={100} height={100}/>
+                            <img src={pixelBotLogo} alt="Hero" width={100} height={100} />
                         </div>
                     </div>
 
@@ -96,16 +94,163 @@ export default function Home() {
             <Container>
                 <Row className=''>
                     <div className="image-row my-5">
-                    {images.map((image, index) => (
-                        <Col key={index} className="image-item">
-                            <img src={image} alt={`Image ${index + 1}`} className="w-100" />
-                        </Col>
-                    ))}
+                        {images.map((image, index) => (
+                            <Col key={index} className="image-item">
+                                <img src={image} alt={`Image ${index + 1}`} className="w-100" />
+                            </Col>
+                        ))}
 
                     </div>
-                    
+
                 </Row>
             </Container>
+
+            <div className="container-fluid bg-secondary my-3">
+                <Container>
+                    <div className='text-center text-danger fs-1 fw-bold'>what can we do</div>
+
+                    <div className='py-3 text-center lh-base'>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ullam tenetur amet beatae minus et temporibus alias iste laboriosam ratione saepe eveniet commodi deserunt, distinctio qui natus sit atque sequi?
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi necessitatibus facilis sed obcaecati inventore sint, expedita nemo, hic a est eius corrupti sit velit in tempora fugit asperiores esse fuga.
+                    </div>
+                    <Row className='py-3 '>
+                        <Row className='border border-2'>
+                            <h1 className=' py-2 '>software development</h1>
+                            <div className='d-flex justify-content-between  py-5'>
+                                <Card style={{ width: '18rem' }}>
+                                    <CardImg variant="top" src={image1} className='w-100' />
+                                    <CardBody>
+                                        <CardTitle>Card Title 1.1</CardTitle>
+                                        <CardText>Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.</CardText>
+                                    </CardBody>
+                                </Card>
+                                <Card style={{ width: '18rem' }}>
+                                    <CardImg variant="top" src={image1} className='w-100' />
+                                    <CardBody>
+                                        <CardTitle>Card Title 1.2</CardTitle>
+                                        <CardText>Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.</CardText>
+                                    </CardBody>
+                                </Card>
+                                <Card style={{ width: '18rem' }}>
+                                    <CardImg variant="top" src={image1} className='w-100' />
+                                    <CardBody>
+                                        <CardTitle>Card Title 1.3</CardTitle>
+                                        <CardText>Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.</CardText>
+                                    </CardBody>
+                                </Card>
+                                <Card style={{ width: '18rem' }}>
+                                    <CardImg variant="top" src={image1} className='w-100' />
+                                    <CardBody>
+                                        <CardTitle>Card Title 1.4 hehh</CardTitle>
+                                        <CardText>Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.</CardText>
+                                    </CardBody>
+                                </Card>
+
+                            </div>
+                        </Row>
+
+                    </Row>
+
+
+                    <Row className='py-3 '>
+                        <Row className='border border-2'>
+                            <h1 className=' py-2 '>Aplication development</h1>
+
+                            <div className='d-flex justify-content-between  py-5'>
+                                <Card style={{ width: '18rem' }}>
+                                    <CardImg variant="top" src={image1} className='w-100' />
+                                    <CardBody>
+
+                                        <CardTitle>Card Title 2.1</CardTitle>
+                                        <CardText>Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.</CardText>
+                                    </CardBody>
+                                </Card>
+                                <Card style={{ width: '18rem' }}>
+                                    <CardImg variant="top" src={image1} className='w-100' />
+                                    <CardBody>
+
+                                        <CardTitle>Card Title 2.2</CardTitle>
+                                        <CardText>Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.</CardText>
+                                    </CardBody>
+                                </Card>
+                                <Card style={{ width: '18rem' }}>
+                                    <CardImg variant="top" src={image1} className='w-100' />
+                                    <CardBody>
+
+                                        <CardTitle>Card Title 2.3</CardTitle>
+                                        <CardText>Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.</CardText>
+                                    </CardBody>
+                                </Card>
+                                <Card style={{ width: '18rem' }}>
+                                    <CardImg variant="top" src={image1} className='w-100' />
+                                    <CardBody>
+
+                                        <CardTitle>Card Title 2.4</CardTitle>
+                                        <CardText>Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.</CardText>
+                                    </CardBody>
+                                </Card>
+
+                            </div>
+                        </Row>
+
+                    </Row>
+                    <Row className='py-3 '>
+                        <Row className='border border-2'>
+                            <h1 className=' py-2 '>Digital Marketing</h1>
+                            <div className='d-flex justify-content-between  py-5'>
+                                <Card style={{ width: '18rem' }}>
+                                    <CardImg variant="top" src={image1} className='w-100' />
+                                    <CardBody>
+                                        <CardTitle>Card Title 3.1</CardTitle>
+                                        <CardText>Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.</CardText>
+                                    </CardBody>
+                                </Card>
+                                <Card style={{ width: '18rem' }}>
+                                    <CardImg variant="top" src={image1} className='w-100' />
+                                    <CardBody>
+                                        <CardTitle>Card Title 3.2</CardTitle>
+                                        <CardText>Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.</CardText>
+                                    </CardBody>
+                                </Card>
+                                <Card style={{ width: '18rem' }}>
+                                    <CardImg variant="top" src={image1} className='w-100' />
+                                    <CardBody>
+
+                                        <CardTitle>Card Title 3.3</CardTitle>
+                                        <CardText>Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.</CardText>
+                                    </CardBody>
+                                </Card>
+                                <Card style={{ width: '18rem' }}>
+                                    <CardImg variant="top" src={image1} className='w-100' />
+                                    <CardBody>
+
+                                        <CardTitle>Card Title 3.4</CardTitle>
+                                        <CardText>Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.</CardText>
+                                    </CardBody>
+                                </Card>
+
+                            </div>
+                        </Row>
+
+                    </Row>
+                </Container>
+
+
+
+            </div>
+
         </>
     );
 }
