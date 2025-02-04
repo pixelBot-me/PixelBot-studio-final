@@ -80,37 +80,35 @@ a.text-primary:hover {
 /* New Section with Images */
 .image-row {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
     gap: 20px;
+    animation: scrollRightToLeft 15s linear infinite;
+    overflow: hidden !important; 
+    width: 50%;
+    /* background-color: yellow; */
+    flex-wrap: nowrap; 
 }
 
 .image-item {
-    /* width: calc(100% / 6 - 20px); */
-    height: 200px;
-    overflow: hidden;
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
+   
 }
 
-.flipping-image {
-    width: 100%;
-    height: 50%;
-    object-fit: cover;
-    animation: flip 15s infinite;
-}
 
-/* Flip Animation */
-@keyframes flip {
-
-    50% {
-        transform: rotateX(360deg); 
+@keyframes scrollRightToLeft {
+    0% {
+        transform: translateX(100%);
     }
-
-
+    100% {
+        transform: translateX(-100%);
+    }
 }
+
+
 
 
 /* Responsive Design */
@@ -139,46 +137,4 @@ a.text-primary:hover {
     .top-adjst{
         margin-top: 140% !important;
     }
-
-    /* image carrousel section */
-
-    .image-row {
-        flex-direction: row;
-        width: 100%;
-        overflow-x: hidden;
-        /* white-space: wrap; */
-        animation: scrollRightToLeft 15s linear infinite;
-    }
-
-    .image-item {
-        width: 100%;
-        /* height: 150px; */
-    }
-
-    .flipping-image {
-        /* width: 100%; */
-        /* height: auto; */
-        object-fit: cover;
-        animation: flip 15s infinite;
-    }
-    
-    @keyframes flip {
-
-        0% {
-            transform: rotateX(0deg); 
-        }
-    
-    
-    }
-
-    @keyframes scrollRightToLeft {
-        0% {
-            transform: translateX(100%);
-        }
-        100% {
-            transform: translateX(-100%);
-        }
-    }
-
-    
 }

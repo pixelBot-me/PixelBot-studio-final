@@ -17,7 +17,7 @@ import image6 from '../../assets/images/swiggy.png';
 const images = [image1, image2, image3, image4, image5, image6];
 
 export default function Home() {
-    
+
     return (
         <>
             <Header />
@@ -94,36 +94,16 @@ export default function Home() {
 
             {/* show branding logos */}
             <Container>
-                <Row className="image-row">
+                <Row className=''>
+                    <div className="image-row my-5">
                     {images.map((image, index) => (
                         <Col key={index} className="image-item">
-                            <img src={image} alt={`Image ${index + 1}`} className="flipping-image" />
+                            <img src={image} alt={`Image ${index + 1}`} className="w-100" />
                         </Col>
                     ))}
-                </Row>
-            </Container>
 
-            {/* <Container>
-                <Row>
-                   
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={image1} />
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the
-                                bulk of the card's content.
-                            </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
-                        </Card.Body>
-                    </Card>
+                    </div>
                     
-                </Row>
-            </Container> */}
-            <Container>
-                <Row>
-
-                <div id="app"></div>
                 </Row>
             </Container>
         </>
