@@ -11,6 +11,7 @@ import image3 from '../../assets/images/swiggy.png';
 import image4 from '../../assets/images/swiggy.png';
 import image5 from '../../assets/images/swiggy.png';
 import image6 from '../../assets/images/swiggy.png';
+import OurServices from '../OurServices';
 
 const images = [image1, image2, image3, image4, image5, image6];
 
@@ -312,6 +313,9 @@ export default function Home() {
 
                 </Row>
             </Container>
+
+            {/* our services section */}
+            <OurServices/>
         </>
     );
 }
