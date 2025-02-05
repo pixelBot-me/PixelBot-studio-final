@@ -47,7 +47,7 @@
     text-align: center;
     padding: 10px;
     /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); */
-    border-radius: 8px;  
+    border-radius: 8px;
 }
 
 /* New section below hero section */
@@ -77,15 +77,16 @@ a.text-primary {
 a.text-primary:hover {
     text-decoration: underline;
 }
+
 /* New Section with Images */
 .image-row {
     display: flex;
     gap: 20px;
     animation: scrollRightToLeft 15s linear infinite;
-    overflow: hidden !important; 
+    overflow: hidden !important;
     width: 50%;
     /* background-color: yellow; */
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
 }
 
 .image-item {
@@ -95,7 +96,28 @@ a.text-primary:hover {
     align-items: center;
     position: relative;
     overflow: hidden;
-   
+
+}
+
+
+/* css for featured branding carousel */
+.image-item-featured {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.image-row-featured {
+    display: flex;
+    gap: 15px;
+    animation: scrollRightToLeft 15s linear infinite;
+    overflow: hidden !important;
+    width: 100%;
+    flex-wrap: nowrap;
 }
 
 
@@ -103,20 +125,18 @@ a.text-primary:hover {
     0% {
         transform: translateX(100%);
     }
+
     100% {
         transform: translateX(-100%);
     }
 }
-
-
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-content {
         flex-direction: column;
         text-align: center;
-        
+
     }
 
     .hero-image {
@@ -129,14 +149,81 @@ a.text-primary:hover {
     }
 
     .feature-card {
-        width: 100%; /* Make cards take full width */
+        width: 100%;
+        /* Make cards take full width */
         box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.1);
-        
+
     }
 
-    .top-adjst{
+    .top-adjst {
         margin-top: 140% !important;
     }
+
+
+    /* why choose us section */
+    .border-end {
+        border-bottom: 5px solid #007bff;
+        /* Change border-end to border-bottom */
+        border-right: none !important;
+        /* Change border-end to border-bottom */
+
+    }
+
+    .mrgin-mob {
+        margin-top: 30px;
+    }
+
+    .featured-brand-logo {
+
+        flex-wrap: wrap !important;
+
+    }
+
+    .image-row-featured {
+
+        display: block;
+        gap: 15px;
+        /* animation: none; */
+        display: flex;
+        overflow: hidden !important;
+    }
+
+    .image-item-featured {
+        width: 100%;
+        /* Make each image occupy full width */
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .py-4 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    /* Adjust padding and margins for better spacing on mobile */
+    .text-primary {
+        font-size: 1.5rem !important;
+    }
+
+    .py-3 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .fs-1 {
+        font-size: 2rem;
+    }
+
+    .featured-logo {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
 }
 
 /* Add these to your CSS file or a <style> tag in your component */
@@ -144,44 +231,56 @@ a.text-primary:hover {
 .sticky-row {
     position: sticky !important;
     top: 0;
-    z-index: 60; /* Makes it stay on top when scrolling */
-    background-color: #fff; /* Optional: to ensure the background color */
-  }
-  
-  .overlapping-row {
+    z-index: 60;
+    /* Makes it stay on top when scrolling */
+    background-color: #fff;
+    /* Optional: to ensure the background color */
+}
+
+.overlapping-row {
     position: relative;
     z-index: 55;
-    margin-top: -50px; /* Adjust for the overlap effect */
-  }
-  
-  /* Ensure the content below is clearly visible */
-  .bg-white {
+    margin-top: -50px;
+    /* Adjust for the overlap effect */
+}
+
+/* Ensure the content below is clearly visible */
+.bg-white {
     position: relative;
     z-index: 1;
-  }
-  
-  .card {
+}
+
+.card {
     position: relative;
     z-index: 1;
-  }
-  
-  .card-body {
+}
+
+.card-body {
     position: relative;
     z-index: 2;
-  }
-  
+}
 
-  /* Ensure the last row has a relative position and overlapping effect */
+
+/* Ensure the last row has a relative position and overlapping effect */
 .overlapping-last-row {
     position: relative;
-    z-index: 60; /* Ensures it stays above previous row */
-    margin-top: -50px; /* Adjust as needed to overlap */
+    z-index: 60;
+    /* Ensures it stays above previous row */
+    margin-top: -50px;
+    /* Adjust as needed to overlap */
 }
 
 /* Optional: if you want to apply sticky effect on last row too */
 .sticky-last-row {
     position: sticky;
-    top: 0; /* Adjust this depending on your layout */
-    z-index: 60; /* Makes it stay on top when scrolling */
+    top: 0;
+    /* Adjust this depending on your layout */
+    z-index: 60;
+    /* Makes it stay on top when scrolling */
     background-color: #fff;
+}
+
+
+.featured-logo {
+    overflow: hidden;
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Carousel, Col, Container, Row, Card, CardBody, CardImg, CardTitle, CardText } from 'react-bootstrap';
+import { Button, Carousel, Col, Container, Row, Card, CardBody, CardImg, CardTitle, CardText, Image } from 'react-bootstrap';
 import '../../assets/css/home.css'; // Ensure this file exists for styling
 import pixelBotLogo from '../../assets/images/PixelBot_Logo_White.svg'
 import Header from '../../common/Header';
@@ -256,6 +256,62 @@ export default function Home() {
 
                 </Container>
             </div>
+
+            <Container>
+                <div className='text-center text-primary fs-1 fw-bold text-capitalize'>why choose us ?</div>
+                <Row className='my-5'>
+                    <div className="col-md-6 border-5 border-end border-primary pe-5 ">
+                        <h1>No need to wonder</h1>
+                        <h1 className='text-primary py-2'>Working with us in wonderful.</h1>
+
+                        <div>
+                            <p className='py-3 text-dark lh-base'>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias aliquam deserunt fugiat enim doloremque impedit repellat dicta porro maxime, laborum voluptates repudiandae modi odio nisi tempore? Ipsam quibusdam eius quis.repudiandae modi odio nisi tempore? Ipsam quibusdam eius quis
+                            </p>
+
+                            <h5>
+                                Before you start, now you can e-sign A digital NDA with us.
+                            </h5>
+
+                            <button className="btn btn-primary btn-lg fw-bold my-5"> Sign NDA </button>
+                        </div>
+
+                    </div>
+                    <div className="col-md-6 ps-5">
+                        <div>
+                            <h3 className='text-capitalize mrgin-mob'>Due diligence with quality & security standards</h3>
+
+                            <div className='d-flex gap-5 py-4 featured-brand-logo r'>
+                                <Image src={image1} className='img-fluid' width={100} height={100} roundedCircle alt="brand-logo" />
+                                <Image src={image1} className='img-fluid' width={100} height={100} roundedCircle alt="brand-logo" />
+                                <Image src={image1} className='img-fluid' width={100} height={100} roundedCircle alt="brand-logo" />
+                                <Image src={image1} className='img-fluid' width={100} height={100} roundedCircle alt="brand-logo" />
+                                <Image src={image1} className='img-fluid' width={100} height={100} roundedCircle alt="brand-logo" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 className='text-capitalize my-5'>we are featured in</h3>
+
+                            <Row className='featured-logo'>
+                                <div className="image-row-featured mt-2">
+                                    {images.map((image, index) => (
+                                        <Col key={index} className="image-item-featured">
+                                            <Image src={image1} className='img-fluid' width={100} height={100} alt={`Image ${index + 1}`} />
+
+                                        </Col>
+                                    ))}
+
+                                </div>
+
+                            </Row>
+
+                        </div>
+
+                    </div>
+
+                </Row>
+            </Container>
         </>
     );
 }
