@@ -21,6 +21,7 @@ import image12 from '../../assets/images/python.jpg';
 
 import OurServices from '../OurServices';
 import '../../assets/css/common.css';
+import GetInTouch from '../GetInTouch';
 
 const images = [image1, image2, image3, image4, image5, image6];
 
@@ -438,6 +439,7 @@ export default function Home() {
                 </Row>
             </Container>
 
+            <GetInTouch/>
         </>
     );
 }
