@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Carousel, Col, Container, Row, Card, CardBody, CardImg, CardTitle, CardText, Image } from 'react-bootstrap';
+import { Button, Carousel, Col, Container, Row, Card, CardBody, CardImg, CardTitle, CardText, Image, CardSubtitle } from 'react-bootstrap';
 import '../../assets/css/home.css'; 
 import pixelBotLogo from '../../assets/images/PixelBot_Logo_White.svg'
 import Header from '../../common/Header';
@@ -11,10 +11,21 @@ import image3 from '../../assets/images/softwareDev.jpg';
 import image4 from '../../assets/images/softwareDev.jpg';
 import image5 from '../../assets/images/softwareDev.jpg';
 import image6 from '../../assets/images/softwareDev.jpg';
+
+import image7 from '../../assets/images/python.jpg';
+import image8 from '../../assets/images/python.jpg';
+import image9 from '../../assets/images/python.jpg';
+import image10 from '../../assets/images/python.jpg';
+import image11 from '../../assets/images/python.jpg';
+import image12 from '../../assets/images/python.jpg';
+
 import OurServices from '../OurServices';
 import '../../assets/css/common.css';
 
 const images = [image1, image2, image3, image4, image5, image6];
+
+const techno = [image7, image8, image9, image10, image11, image12];
+
 
 export default function Home() {
 
@@ -336,13 +347,96 @@ export default function Home() {
                         </div>
 
                     </div>
-
                 </Row>
+            </Container>
+
+            {/* starts multi layer carousel section */}
+            <Container>
+                <div className="container fluid multi-layer-image-row1 mt-5">
+                    {techno.map((image, index) => (
+                        <Col key={index} className="multi-layer-image-item1">
+                            <img src={image} alt={`Image ${index + 1}`} className="w-50 shadow mb-5 bg-body rounded" />
+                        </Col>
+                    ))}
+                </div>
+            </Container>
+
+            <Container>
+                <div className="container fluid multi-layer-image-row2">
+                    {techno.map((image, index) => (
+                        <Col key={index} className="multi-layer-image-item2">
+                            <img src={image} alt={`Image ${index + 1}`} className="w-50 shadow mb-5 bg-body rounded" />
+                        </Col>
+                    ))}
+                </div>
+            </Container>
+
+            <Container>
+                <div className="container fluid multi-layer-image-row1 mb-4">
+                    {techno.map((image, index) => (
+                        <Col key={index} className="multi-layer-image-item1">
+                            <img src={image} alt={`Image ${index + 1}`} className="w-50 shadow mb-5 bg-body rounded" />
+                        </Col>
+                    ))}
+                </div>
             </Container>
 
             {/* starts our services section */}
             <OurServices/>
             {/* end our services section */}
+
+            {/* diagonal multicolor background section */}
+            <Container>
+                <Row className='diagonal-bg py-5 my-5'>
+                <div className='col-md-6'>
+                    <h1 className='text-capitalize pt-5'>what our amazing client</h1>
+                    <h1 className='text-capitalize text-primary'>say about us</h1>
+
+                    <p className='py-4 fw-normal'>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque numquam quisquam obcaecati suscipit illo, beatae at, labore veniam nostrum ducimus eos reprehenderit architecto in iure nisi. Vitae voluptas ab beatae.
+                    </p>
+
+
+                </div>
+                <div className='col-md-6 d-flex gap-5'>
+                    <Card style={{ height: '15rem' }} className='p-3'>
+                        <CardBody>
+                            <CardText>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </CardText>
+                            <CardSubtitle><a href="" className='text-danger'>Read more</a></CardSubtitle>
+                           <div className='pt-5'>
+                           <CardTitle>Teaching Coordinator</CardTitle>
+                            <CardText>
+                                Lorem ipsum dolor sit .
+                            </CardText>
+                           </div>
+                        </CardBody>
+
+                    </Card>
+
+                    <Card style={{ height: '15rem' }} className='p-3'>
+                        <CardBody>
+                            <CardText>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </CardText>
+                            <CardSubtitle><a href="" className='text-danger'>Read more</a></CardSubtitle>
+                           <div className='pt-5'>
+                           <CardTitle>Teaching Coordinator</CardTitle>
+                            <CardText>
+                                Lorem ipsum dolor sit.
+                            </CardText>
+                           </div>
+                        </CardBody>
+
+                    </Card>
+
+                </div>
+
+
+
+                </Row>
+            </Container>
 
         </>
     );

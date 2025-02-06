@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 .hero-section {
     position: relative !important;
     height: 90vh;
@@ -233,10 +237,56 @@ a.text-primary:hover {
     top: 15%;
     z-index: 300; 
     background-color: #d2dde6;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(211, 182, 182, 0.1);
   }
   
 
 .featured-logo {
     overflow: hidden;
+}
+
+/* diagonal multicolor bg section starts css */
+.diagonal-bg{
+    background-color: #34ADFF;
+    background-image: -webkit-linear-gradient(107deg, #34ADFF 50%, white 50%);
+    min-height: 400px;
+  }
+
+
+  .multi-layer-image-row1{
+    display: flex;
+    gap: 20px;
+    animation: scrollRightToLeft 15s linear infinite;
+    width: 100%;
+    overflow: hidden;
+    flex-wrap: nowrap; 
+}
+
+.multi-layer-image-item1,.multi-layer-image-item2{
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden ;
+
+}
+
+
+@keyframes scrollLeftToRight {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.multi-layer-image-row2{
+    display: flex;
+    gap: 20px;
+    animation: scrollLeftToRight 15s linear infinite;
+    width: 100%;
+    overflow: hidden;
+    flex-wrap: nowrap; 
 }
