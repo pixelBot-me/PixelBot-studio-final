@@ -17,6 +17,39 @@ const images = [image1, image2, image3, image4, image5, image6];
 
 export default function Home() {
 
+    useEffect(() => {
+        // Get references to all the rows
+        const rows = document.querySelectorAll(".sticky-row");
+        const rowOffsets = [];
+    
+        // Get the offset position of each row
+        rows.forEach((row, index) => {
+          rowOffsets.push(row.offsetTop);
+        });
+    
+        const handleScroll = () => {
+          const scrollY = window.scrollY;
+    
+          // Check each row's position relative to the viewport
+          rows.forEach((row, index) => {
+            // Apply the sticky class to each row as it reaches the top of the viewport
+            if (scrollY >= rowOffsets[index] && scrollY < rowOffsets[index] + row.offsetHeight) {
+              row.classList.add("sticky-active");
+            } else {
+              row.classList.remove("sticky-active");
+            }
+          });
+        };
+    
+        // Add event listener for scroll
+        window.addEventListener("scroll", handleScroll);
+    
+        // Cleanup the event listener on unmount
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
+    
     return (
         <>
             <Header />
@@ -93,7 +126,7 @@ export default function Home() {
 
             {/* show branding logos */}
             <Container>
-                <Row className=''>
+                <Row className='overflow-hidn'>
                     <div className="image-row my-5">
                         {images.map((image, index) => (
                             <Col key={index} className="image-item">
@@ -108,17 +141,16 @@ export default function Home() {
 
             <div className="container-fluid bg-light my-5">
                 <Container>
-                    <div className='text-center text-primary fs-1 fw-bold'>what can we do</div>
+                    <div className='text-center text-primary fs-1 fw-bold'>What Can We Do</div>
 
-                    <div className='py-3 text-center lh-base '>
+                    <div className='py-3 text-center lh-base'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ullam tenetur amet beatae minus et temporibus alias iste laboriosam ratione saepe eveniet commodi deserunt, distinctio qui natus sit atque sequi?
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi necessitatibus facilis sed obcaecati inventore sint, expedita nemo, hic a est eius corrupti sit velit in tempora fugit asperiores esse fuga.
                     </div>
 
                     {/* Software Development Row (Sticky Row) */}
                     <Row className="border border-2 p-3 bg-white sticky-row">
-                        <h1 className=' py-2 '>software development</h1>
-                        <div className='d-flex justify-content-between  py-5'>
+                        <h1 className='py-2'>Software Development</h1>
+                        <div className='d-flex justify-content-between py-5'>
                             <Card style={{ width: '18rem' }}>
                                 <CardImg variant="top" src={image1} className='w-100' />
                                 <CardBody>
@@ -151,69 +183,34 @@ export default function Home() {
                     </Row>
 
                     {/* Application Development Row (Overlapping Effect) */}
-                    <Row className="p-3 bg-white overlapping-row shadow bg-body rounded">
-                        <h1 className=' py-2 '>Application development</h1>
-                        <div className='d-flex justify-content-between  py-5'>
+                    <Row className="p-3 bg-white sticky-row shadow bg-body rounded">
+                        <h1 className='py-2'>Application Development</h1>
+                        <div className='d-flex justify-content-between py-5'>
                             <Card style={{ width: '18rem' }}>
                                 <CardImg variant="top" src={image1} className='w-100' />
                                 <CardBody>
-                                    <CardTitle>Card Title 2.1</CardTitle>
+                                    <CardTitle>Card Title 1.1</CardTitle>
                                     <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
                                 </CardBody>
                             </Card>
                             <Card style={{ width: '18rem' }}>
                                 <CardImg variant="top" src={image1} className='w-100' />
                                 <CardBody>
-                                    <CardTitle>Card Title 2.2</CardTitle>
+                                    <CardTitle>Card Title 1.2</CardTitle>
                                     <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
                                 </CardBody>
                             </Card>
                             <Card style={{ width: '18rem' }}>
                                 <CardImg variant="top" src={image1} className='w-100' />
                                 <CardBody>
-                                    <CardTitle>Card Title 2.3</CardTitle>
+                                    <CardTitle>Card Title 1.3</CardTitle>
                                     <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
                                 </CardBody>
                             </Card>
                             <Card style={{ width: '18rem' }}>
                                 <CardImg variant="top" src={image1} className='w-100' />
                                 <CardBody>
-                                    <CardTitle>Card Title 2.4</CardTitle>
-                                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                                </CardBody>
-                            </Card>
-                        </div>
-                    </Row>
-
-                    {/* Digital Marketing Row (Overlapping Effect) */}
-                    <Row className="p-3 bg-white overlapping-row shadow bg-body rounded">
-                        <h1 className=' py-2 '>Digital Marketing</h1>
-                        <div className='d-flex justify-content-between  py-5'>
-                            <Card style={{ width: '18rem' }}>
-                                <CardImg variant="top" src={image1} className='w-100' />
-                                <CardBody>
-                                    <CardTitle>Card Title 3.1</CardTitle>
-                                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                                </CardBody>
-                            </Card>
-                            <Card style={{ width: '18rem' }}>
-                                <CardImg variant="top" src={image1} className='w-100' />
-                                <CardBody>
-                                    <CardTitle>Card Title 3.2</CardTitle>
-                                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                                </CardBody>
-                            </Card>
-                            <Card style={{ width: '18rem' }}>
-                                <CardImg variant="top" src={image1} className='w-100' />
-                                <CardBody>
-                                    <CardTitle>Card Title 3.3</CardTitle>
-                                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                                </CardBody>
-                            </Card>
-                            <Card style={{ width: '18rem' }}>
-                                <CardImg variant="top" src={image1} className='w-100' />
-                                <CardBody>
-                                    <CardTitle>Card Title 3.4</CardTitle>
+                                    <CardTitle>Card Title 1.4</CardTitle>
                                     <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
                                 </CardBody>
                             </Card>
@@ -221,34 +218,69 @@ export default function Home() {
                     </Row>
 
                     {/* Digital Marketing Row (Overlapping Effect) */}
-                    <Row className="p-3 bg-white overlapping-last-row shadow bg-body rounded">
+                    <Row className="p-3 bg-white sticky-row shadow bg-body rounded">
+                        <h1 className='py-2'>Digital Marketing</h1>
+                        <div className='d-flex justify-content-between py-5'>
+                            <Card style={{ width: '18rem' }}>
+                                <CardImg variant="top" src={image1} className='w-100' />
+                                <CardBody>
+                                    <CardTitle>Card Title 1.1</CardTitle>
+                                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+                                </CardBody>
+                            </Card>
+                            <Card style={{ width: '18rem' }}>
+                                <CardImg variant="top" src={image1} className='w-100' />
+                                <CardBody>
+                                    <CardTitle>Card Title 1.2</CardTitle>
+                                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+                                </CardBody>
+                            </Card>
+                            <Card style={{ width: '18rem' }}>
+                                <CardImg variant="top" src={image1} className='w-100' />
+                                <CardBody>
+                                    <CardTitle>Card Title 1.3</CardTitle>
+                                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+                                </CardBody>
+                            </Card>
+                            <Card style={{ width: '18rem' }}>
+                                <CardImg variant="top" src={image1} className='w-100' />
+                                <CardBody>
+                                    <CardTitle>Card Title 1.4</CardTitle>
+                                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+                                </CardBody>
+                            </Card>
+                        </div>
+                    </Row>
+
+                    {/* Testing Mode Row (Sticky and Overlapping) */}
+                    <Row className="p-3 bg-white  sticky-row shadow bg-body rounded">
                         <h1 className='py-2'>Testing Mode</h1>
                         <div className='d-flex justify-content-between py-5'>
                             <Card style={{ width: '18rem' }}>
                                 <CardImg variant="top" src={image1} className='w-100' />
                                 <CardBody>
-                                    <CardTitle>Card Title 3.1</CardTitle>
+                                    <CardTitle>Card Title 1.1</CardTitle>
                                     <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
                                 </CardBody>
                             </Card>
                             <Card style={{ width: '18rem' }}>
                                 <CardImg variant="top" src={image1} className='w-100' />
                                 <CardBody>
-                                    <CardTitle>Card Title 3.2</CardTitle>
+                                    <CardTitle>Card Title 1.2</CardTitle>
                                     <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
                                 </CardBody>
                             </Card>
                             <Card style={{ width: '18rem' }}>
                                 <CardImg variant="top" src={image1} className='w-100' />
                                 <CardBody>
-                                    <CardTitle>Card Title 3.3</CardTitle>
+                                    <CardTitle>Card Title 1.3</CardTitle>
                                     <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
                                 </CardBody>
                             </Card>
                             <Card style={{ width: '18rem' }}>
                                 <CardImg variant="top" src={image1} className='w-100' />
                                 <CardBody>
-                                    <CardTitle>Card Title 3.4</CardTitle>
+                                    <CardTitle>Card Title 1.4</CardTitle>
                                     <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
                                 </CardBody>
                             </Card>
@@ -274,7 +306,7 @@ export default function Home() {
                                 Before you start, now you can e-sign A digital NDA with us.
                             </h5>
 
-                            <button className="btn btn-primary btn-lg fw-bold my-5"> Sign NDA </button>
+                            <button className="btn btn-primary btn-lg fw-bold my-5"> Sign NDA &nbsp; →</button>
                         </div>
 
                     </div>

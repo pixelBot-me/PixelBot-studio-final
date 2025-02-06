@@ -81,12 +81,10 @@ a.text-primary:hover {
 /* New Section with Images */
 .image-row {
     display: flex;
-    gap: 20px;
+    gap: 50px;
     animation: scrollRightToLeft 15s linear infinite;
-    overflow: hidden !important;
-    width: 50%;
-    /* background-color: yellow; */
-    flex-wrap: nowrap;
+    width: 100%;
+    flex-wrap: nowrap; 
 }
 
 .image-item {
@@ -94,8 +92,7 @@ a.text-primary:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    overflow: hidden;
+    overflow: hidden ;
 
 }
 
@@ -226,60 +223,29 @@ a.text-primary:hover {
 
 }
 
-/* Add these to your CSS file or a <style> tag in your component */
+.overflow-hidn{
+    overflow: hidden !important; 
+
+}
 
 .sticky-row {
-    position: sticky !important;
-    top: 0;
-    z-index: 60;
-    /* Makes it stay on top when scrolling */
-    background-color: #fff;
-    /* Optional: to ensure the background color */
-}
-
-.overlapping-row {
-    position: relative;
-    z-index: 55;
-    margin-top: -50px;
-    /* Adjust for the overlap effect */
-}
-
-/* Ensure the content below is clearly visible */
-.bg-white {
-    position: relative;
-    z-index: 1;
-}
-
-.card {
-    position: relative;
-    z-index: 1;
-}
-
-.card-body {
-    position: relative;
-    z-index: 2;
-}
-
-
-/* Ensure the last row has a relative position and overlapping effect */
-.overlapping-last-row {
-    position: relative;
-    z-index: 60;
-    /* Ensures it stays above previous row */
-    margin-top: -50px;
-    /* Adjust as needed to overlap */
-}
-
-/* Optional: if you want to apply sticky effect on last row too */
-.sticky-last-row {
     position: sticky;
-    top: 0;
-    /* Adjust this depending on your layout */
-    z-index: 60;
-    /* Makes it stay on top when scrolling */
-    background-color: #fff;
-}
-
+    top: 15%;
+    z-index: 500; /* First row stays behind */
+    /* position: relative; */
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+  
+  /* Overlapping rows that should stick */
+  .sticky-active {
+    position: sticky;
+    top: 15%;
+    z-index: 300; /* Higher stacking order to appear above previous rows */
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+  
 
 .featured-logo {
     overflow: hidden;

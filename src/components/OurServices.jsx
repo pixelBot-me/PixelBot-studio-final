@@ -34,24 +34,25 @@ export default function OurServices() {
                             <input type="radio" name="slider" checked={selectedTab === 'code'} onChange={() => handleTabChange('code')} id="code" />
                             <input type="radio" name="slider" checked={selectedTab === 'about'} onChange={() => handleTabChange('about')} id="about" />
 
-                            <div className="list border-5 border-end border-primary ">
-                                <label htmlFor="home" className="home" onClick={() => handleTabChange('home')}>
-                                    <span className='text-capitalize'>web development </span>
+                            <div className="list border-5  ">
+                                <label htmlFor="home" className={`home ${selectedTab === 'home' ? 'active' : ''}`} onClick={() => handleTabChange('home')}>
+                                    <span className='text-capitalize'>web development &nbsp; {selectedTab === 'home' && '→'}</span>
                                 </label>
-                                <label htmlFor="blog" className="blog " onClick={() => handleTabChange('blog')}>
-                                    <span className='text-capitalize '>branding</span>
+                                <label htmlFor="blog" className={`blog ${selectedTab === 'blog' ? 'active' : ''}`} onClick={() => handleTabChange('blog')}>
+                                    <span className='text-capitalize '>branding &nbsp; {selectedTab === 'blog' && '→'}</span>
                                 </label>
-                                <label htmlFor="help" className="help" onClick={() => handleTabChange('help')}>
-                                    <span className='text-capitalize'>IT service</span>
+                                <label htmlFor="help" className={`help ${selectedTab === 'help' ? 'active' : ''}`} onClick={() => handleTabChange('help')}>
+                                    <span className='text-capitalize'>IT service &nbsp; {selectedTab === 'help' && '→'}</span>
                                 </label>
-                                <label htmlFor="code" className="code" onClick={() => handleTabChange('code')}>
-                                    <span className='text-capitalize'>digital marketing</span>
+                                <label htmlFor="code" className={`code ${selectedTab === 'code' ? 'active' : ''}`} onClick={() => handleTabChange('code')}>
+                                    <span className='text-capitalize'>digital marketing &nbsp;{selectedTab === 'code' && '→'}</span>
                                 </label>
-                                <label htmlFor="about" className="about" onClick={() => handleTabChange('about')}>
-                                    <span className='text-capitalize'>content management</span>
+                                <label htmlFor="about" className={`about ${selectedTab === 'about' ? 'active' : ''}`} onClick={() => handleTabChange('about')}>
+                                    <span className='text-capitalize'>content management &nbsp;{selectedTab === 'about' && '→'}</span>
                                 </label>
                                 <div className="slider"></div>
                             </div>
+                            <div className="col-2"></div>
 
                             <div className="text-content">
                                 {/* Content for Home */}
@@ -73,9 +74,13 @@ export default function OurServices() {
                                             </ul>
                                         </div>
 
-                                        <Button variant="primary" size="lg" className='text-capitalize my-3'>
-                                            web development &nbsp; &#8594;
-                                        </Button>
+                                        <div style={{ textAlign: 'right' }}>
+                                            <Button variant="primary" size="lg" className='text-capitalize my-3'>
+                                                web development &nbsp; &#8594;
+                                            </Button>
+
+                                        </div>
+
 
                                     </div>
                                 )}
@@ -98,10 +103,12 @@ export default function OurServices() {
                                             </ul>
                                         </div>
 
-                                        <Button variant="primary" size="lg" className='text-capitalize my-3'>
-                                        branding &nbsp; &#8594;
-                                        </Button>
+                                        <div style={{ textAlign: 'right' }}>
 
+                                            <Button variant="primary" size="lg" className='text-capitalize my-3'>
+                                                branding &nbsp; &#8594;
+                                            </Button>
+                                        </div>
 
                                     </div>
                                 )}
@@ -123,11 +130,14 @@ export default function OurServices() {
                                                 <li className='py-2'> <a href="" className='text-decoration-none text-dark'>Link  1</a> 0</li>
                                             </ul>
                                         </div>
+                                        <div style={{ textAlign: 'right' }}>
 
-                                        <Button variant="primary" size="lg" className='text-capitalize my-3'>
-                                        IT service &nbsp; &#8594;
-                                        </Button>
+                                            <Button variant="primary" size="lg" className='text-capitalize my-3'>
+                                                IT service &nbsp; &#8594;
+                                            </Button>
+                                        </div>
                                     </div>
+
                                 )}
                                 {/* Content for Code */}
                                 {selectedTab === 'code' && (
@@ -147,11 +157,14 @@ export default function OurServices() {
                                                 <li className='py-2'> <a href="" className='text-decoration-none text-dark'>Link  1</a> 0</li>
                                             </ul>
                                         </div>
+                                        <div style={{ textAlign: 'right' }}>
 
-                                        <Button variant="primary" size="lg" className='text-capitalize my-3'>
-                                        digital marketing &nbsp; &#8594;
-                                        </Button>
+                                            <Button variant="primary" size="lg" className='text-capitalize my-3'>
+                                                digital marketing &nbsp; &#8594;
+                                            </Button>
+                                        </div>
                                     </div>
+
                                 )}
                                 {/* Content for About */}
                                 {selectedTab === 'about' && (
@@ -171,11 +184,14 @@ export default function OurServices() {
                                                 <li className='py-2'> <a href="" className='text-decoration-none text-dark'>Link  1</a> 0</li>
                                             </ul>
                                         </div>
+                                        <div style={{ textAlign: 'right' }}>
 
-                                        <Button variant="primary" size="lg" className='text-capitalize my-3'>
-                                        content management &nbsp; &#8594;
-                                        </Button>
+                                            <Button variant="primary" size="lg" className='text-capitalize my-3'>
+                                                content management &nbsp; &#8594;
+                                            </Button>
+                                        </div>
                                     </div>
+
                                 )}
                             </div>
                         </div>

@@ -21,6 +21,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    height: 100%;
   }
   
   .content .list {
@@ -33,7 +35,7 @@
   
   .content .list label {
     cursor: pointer;
-    height: 80px;
+    height: 60px;
     line-height: 60px;
     font-size: 22px;
     font-weight: 500;
@@ -51,6 +53,13 @@
     color: white;
   }
   
+  .col-2{
+    border-left: 5px solid blue;
+    height: 100%;  /* This will ensure it stretches to the full height of the parent */
+    display: block;
+    width: 10%;
+    
+  }
   .content .slider {
     position: absolute;
     left: 0;
@@ -145,6 +154,6 @@
     -moz-column-gap: 1em;
     -ms-column-gap: 1em;
     -o-column-gap: 1em;
-    column-gap: 1em;
+    column-gap: 2em;
     }
   
