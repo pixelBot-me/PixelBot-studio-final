@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Container, Row } from 'react-bootstrap';
 import '../assets/css/services.css';
+import '../assets/css/common.css'
 
 export default function OurServices() {
-    // Maintain the state for the selected tab
-    const [selectedTab, setSelectedTab] = useState('home');
-
-    // Handle tab change on label click
+    const [selectedTab, setSelectedTab] = useState('web_dev');
     const handleTabChange = (tab) => {
         setSelectedTab(tab);
     };
@@ -16,7 +14,7 @@ export default function OurServices() {
             <Container>
 
                 <Row>
-                    <h1 className='text-center text-primary fw-bold py-3'>Our services</h1>
+                    <h1 className='text-center thm-clr fw-bold py-3'>Our services</h1>
                     <p className='py-3 lh-base text-dark text-center fw-normal'>
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam odio porro distinctio, placeat quam qui consectetur voluptatum architecto possimus est recusandae repudiandae maxime repellat cupiditate? Soluta fugit assumenda maxime ea. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ullam commodi, quo cumque tenetur molestias vel labore culpa fugiat provident aliquam fugit dignissimos voluptatibus exercitationem ipsum at a quibusdam. Magni.
 
@@ -27,37 +25,36 @@ export default function OurServices() {
                     <div className="our-service">
 
                         <div className="content">
-                            {/* Radio buttons are hidden but used for managing the state */}
-                            <input type="radio" name="slider" checked={selectedTab === 'home'} onChange={() => handleTabChange('home')} id="home" />
-                            <input type="radio" name="slider" checked={selectedTab === 'blog'} onChange={() => handleTabChange('blog')} id="blog" />
-                            <input type="radio" name="slider" checked={selectedTab === 'help'} onChange={() => handleTabChange('help')} id="help" />
-                            <input type="radio" name="slider" checked={selectedTab === 'code'} onChange={() => handleTabChange('code')} id="code" />
-                            <input type="radio" name="slider" checked={selectedTab === 'about'} onChange={() => handleTabChange('about')} id="about" />
+                            <input type="radio" name="slider" checked={selectedTab === 'web_dev'} onChange={() => handleTabChange('web_dev')} id="web_dev" />
+                            <input type="radio" name="slider" checked={selectedTab === 'branding'} onChange={() => handleTabChange('branding')} id="branding" />
+                            <input type="radio" name="slider" checked={selectedTab === 'it_services'} onChange={() => handleTabChange('it_services')} id="it_services" />
+                            <input type="radio" name="slider" checked={selectedTab === 'dig_mark'} onChange={() => handleTabChange('dig_mark')} id="dig_mark" />
+                            <input type="radio" name="slider" checked={selectedTab === 'cont_manag'} onChange={() => handleTabChange('cont_manag')} id="cont_manag" />
 
                             <div className="list border-5  ">
-                                <label htmlFor="home" className={`home ${selectedTab === 'home' ? 'active' : ''}`} onClick={() => handleTabChange('home')}>
-                                    <span className='text-capitalize'>web development &nbsp; {selectedTab === 'home' && '→'}</span>
+                                <label htmlFor="web_dev" className={`web_dev ${selectedTab === 'web_dev' ? 'active' : ''}`} onClick={() => handleTabChange('web_dev')}>
+                                    <span className='text-capitalize'>web development &nbsp; {selectedTab === 'web_dev' && '→'}</span>
                                 </label>
-                                <label htmlFor="blog" className={`blog ${selectedTab === 'blog' ? 'active' : ''}`} onClick={() => handleTabChange('blog')}>
-                                    <span className='text-capitalize '>branding &nbsp; {selectedTab === 'blog' && '→'}</span>
+                                <label htmlFor="branding" className={`branding ${selectedTab === 'branding' ? 'active' : ''}`} onClick={() => handleTabChange('branding')}>
+                                    <span className='text-capitalize '>branding &nbsp; {selectedTab === 'branding' && '→'}</span>
                                 </label>
-                                <label htmlFor="help" className={`help ${selectedTab === 'help' ? 'active' : ''}`} onClick={() => handleTabChange('help')}>
-                                    <span className='text-capitalize'>IT service &nbsp; {selectedTab === 'help' && '→'}</span>
+                                <label htmlFor="it_services" className={`it_services ${selectedTab === 'it_services' ? 'active' : ''}`} onClick={() => handleTabChange('it_services')}>
+                                    <span className='text-capitalize'>IT service &nbsp; {selectedTab === 'it_services' && '→'}</span>
                                 </label>
-                                <label htmlFor="code" className={`code ${selectedTab === 'code' ? 'active' : ''}`} onClick={() => handleTabChange('code')}>
-                                    <span className='text-capitalize'>digital marketing &nbsp;{selectedTab === 'code' && '→'}</span>
+                                <label htmlFor="dig_mark" className={`dig_mark ${selectedTab === 'dig_mark' ? 'active' : ''}`} onClick={() => handleTabChange('dig_mark')}>
+                                    <span className='text-capitalize'>digital marketing &nbsp;{selectedTab === 'dig_mark' && '→'}</span>
                                 </label>
-                                <label htmlFor="about" className={`about ${selectedTab === 'about' ? 'active' : ''}`} onClick={() => handleTabChange('about')}>
-                                    <span className='text-capitalize'>content management &nbsp;{selectedTab === 'about' && '→'}</span>
+                                <label htmlFor="cont_manag" className={`cont_manag ${selectedTab === 'cont_manag' ? 'active' : ''}`} onClick={() => handleTabChange('cont_manag')}>
+                                    <span className='text-capitalize'>content management &nbsp;{selectedTab === 'cont_manag' && '→'}</span>
                                 </label>
                                 <div className="slider"></div>
                             </div>
                             <div className="col-2"></div>
 
                             <div className="text-content">
-                                {/* Content for Home */}
-                                {selectedTab === 'home' && (
-                                    <div className="home text">
+                                {/* Content for web_dev */}
+                                {selectedTab === 'web_dev' && (
+                                    <div className="web_dev text">
                                         <div className="title text-capitalize fs-1">web development </div>
                                         <div id="main">
                                             <ul>
@@ -75,7 +72,7 @@ export default function OurServices() {
                                         </div>
 
                                         <div style={{ textAlign: 'right' }}>
-                                            <Button variant="primary" size="lg" className='text-capitalize my-3'>
+                                            <Button size="lg" className='text-capitalize my-3 bg-theme'>
                                                 web development &nbsp; &#8594;
                                             </Button>
 
@@ -84,9 +81,9 @@ export default function OurServices() {
 
                                     </div>
                                 )}
-                                {/* Content for Blog */}
-                                {selectedTab === 'blog' && (
-                                    <div className="blog text">
+                                {/* Content for branding */}
+                                {selectedTab === 'branding' && (
+                                    <div className="branding text">
                                         <div className="title text-capitalize fs-1">branding</div>
                                         <div id="main">
                                             <ul>
@@ -105,16 +102,16 @@ export default function OurServices() {
 
                                         <div style={{ textAlign: 'right' }}>
 
-                                            <Button variant="primary" size="lg" className='text-capitalize my-3'>
+                                            <Button size="lg" className='text-capitalize my-3 bg-theme'>
                                                 branding &nbsp; &#8594;
                                             </Button>
                                         </div>
 
                                     </div>
                                 )}
-                                {/* Content for Help */}
-                                {selectedTab === 'help' && (
-                                    <div className="help text">
+                                {/* Content for it_services */}
+                                {selectedTab === 'it_services' && (
+                                    <div className="it_services text">
                                         <div className="title text-capitalize fs-1">IT service</div>
                                         <div id="main">
                                             <ul>
@@ -132,16 +129,16 @@ export default function OurServices() {
                                         </div>
                                         <div style={{ textAlign: 'right' }}>
 
-                                            <Button variant="primary" size="lg" className='text-capitalize my-3'>
+                                            <Button size="lg" className='text-capitalize my-3 bg-theme'>
                                                 IT service &nbsp; &#8594;
                                             </Button>
                                         </div>
                                     </div>
 
                                 )}
-                                {/* Content for Code */}
-                                {selectedTab === 'code' && (
-                                    <div className="code text">
+                                {/* Content for dig_mark */}
+                                {selectedTab === 'dig_mark' && (
+                                    <div className="dig_mark text">
                                         <div className="title text-capitalize fs-1">digital marketing</div>
                                         <div id="main">
                                             <ul>
@@ -159,16 +156,16 @@ export default function OurServices() {
                                         </div>
                                         <div style={{ textAlign: 'right' }}>
 
-                                            <Button variant="primary" size="lg" className='text-capitalize my-3'>
+                                            <Button size="lg" className='text-capitalize my-3 bg-theme'>
                                                 digital marketing &nbsp; &#8594;
                                             </Button>
                                         </div>
                                     </div>
 
                                 )}
-                                {/* Content for About */}
-                                {selectedTab === 'about' && (
-                                    <div className="about text">
+                                {/* Content for cont_manag */}
+                                {selectedTab === 'cont_manag' && (
+                                    <div className="cont_manag text">
                                         <div className="title text-capitalize fs-1">content management</div>
                                         <div id="main">
                                             <ul>
@@ -186,12 +183,11 @@ export default function OurServices() {
                                         </div>
                                         <div style={{ textAlign: 'right' }}>
 
-                                            <Button variant="primary" size="lg" className='text-capitalize my-3'>
+                                            <Button size="lg" className='text-capitalize my-3 bg-theme'>
                                                 content management &nbsp; &#8594;
                                             </Button>
                                         </div>
                                     </div>
-
                                 )}
                             </div>
                         </div>

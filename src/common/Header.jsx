@@ -68,7 +68,6 @@ export default function Header() {
                         <Navbar.Toggle onClick={() => setMobileMenu(!mobileMenu)} />
                         <Navbar.Collapse className={mobileMenu ? "show" : ""}>
                             <Nav className="mx-auto nav-item">
-                                {/* Static Nav Items */}
                                 <div
                                     className=""
                                     onMouseEnter={() => setMenuOpen(0)}
@@ -79,7 +78,6 @@ export default function Header() {
                                     </Nav.Link>
                                     {menuOpen === 0 && (
                                         <div className="submenu d-flex flex-row shadow bg-body rounded rounded-4">
-                                            {/* First Column Section */}
                                             <div className="submenu-row d-flex flex-column my-4">
                                                 <h6 className="text-danger mb-4">The Company</h6>
                                                 <a href="/about-us" className="text-dark text-decoration-none py-2">About Us</a>
@@ -87,7 +85,6 @@ export default function Header() {
                                                 <a href="" className="text-dark text-decoration-none py-2">Careers</a>
                                             </div>
 
-                                            {/* Second Column Section */}
                                             <div className="submenu-column d-flex flex-column ">
                                                 <a href="" className="text-dark text-decoration-none my-4 text-break">Imagination Meets, Implementation</a>
                                                 <div className="d-flex justify-content-between">

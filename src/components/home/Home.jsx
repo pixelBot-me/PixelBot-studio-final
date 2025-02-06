@@ -1,38 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Carousel, Col, Container, Row, Card, CardBody, CardImg, CardTitle, CardText, Image } from 'react-bootstrap';
-import '../../assets/css/home.css'; // Ensure this file exists for styling
+import '../../assets/css/home.css'; 
 import pixelBotLogo from '../../assets/images/PixelBot_Logo_White.svg'
 import Header from '../../common/Header';
 // import Card from 'react-bootstrap/Card';
 
-import image1 from '../../assets/images/swiggy.png';
-import image2 from '../../assets/images/swiggy.png';
-import image3 from '../../assets/images/swiggy.png';
-import image4 from '../../assets/images/swiggy.png';
-import image5 from '../../assets/images/swiggy.png';
-import image6 from '../../assets/images/swiggy.png';
+import image1 from '../../assets/images/softwareDev.jpg';
+import image2 from '../../assets/images/softwareDev.jpg';
+import image3 from '../../assets/images/softwareDev.jpg';
+import image4 from '../../assets/images/softwareDev.jpg';
+import image5 from '../../assets/images/softwareDev.jpg';
+import image6 from '../../assets/images/softwareDev.jpg';
 import OurServices from '../OurServices';
+import '../../assets/css/common.css';
 
 const images = [image1, image2, image3, image4, image5, image6];
 
 export default function Home() {
 
     useEffect(() => {
-        // Get references to all the rows
         const rows = document.querySelectorAll(".sticky-row");
         const rowOffsets = [];
     
-        // Get the offset position of each row
         rows.forEach((row, index) => {
           rowOffsets.push(row.offsetTop);
         });
     
         const handleScroll = () => {
           const scrollY = window.scrollY;
-    
-          // Check each row's position relative to the viewport
           rows.forEach((row, index) => {
-            // Apply the sticky class to each row as it reaches the top of the viewport
             if (scrollY >= rowOffsets[index] && scrollY < rowOffsets[index] + row.offsetHeight) {
               row.classList.add("sticky-active");
             } else {
@@ -41,10 +37,8 @@ export default function Home() {
           });
         };
     
-        // Add event listener for scroll
         window.addEventListener("scroll", handleScroll);
     
-        // Cleanup the event listener on unmount
         return () => {
           window.removeEventListener("scroll", handleScroll);
         };
@@ -110,7 +104,7 @@ export default function Home() {
             <Container>
                 <Row>
                     <div className='text-center py-5 top-adjst mt-5'>
-                        <h1 className='text-primary fs-1'>Trusted by 600+ Startups and</h1>
+                        <h1 className='thm-clr fs-1'>Trusted by 600+ Startups and</h1>
                         <h1 className='fs-1 py-1'>Enterprises across 20+ Nations</h1>
 
                         <div className='py-5'>
@@ -118,7 +112,7 @@ export default function Home() {
                         </div>
 
                         <div>
-                            <a href="#" className='text-decoration-none text-primary fs-5 py-5'>Learn more about us →</a>
+                            <a href="#" className='text-decoration-none thm-clr fs-5 py-5'>Learn more about us →</a>
                         </div>
                     </div>
                 </Row>
@@ -141,7 +135,7 @@ export default function Home() {
 
             <div className="container-fluid bg-light my-5">
                 <Container>
-                    <div className='text-center text-primary fs-1 fw-bold'>What Can We Do</div>
+                    <div className='text-center thm-clr fs-1 fw-bold'>What Can We Do</div>
 
                     <div className='py-3 text-center lh-base'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ullam tenetur amet beatae minus et temporibus alias iste laboriosam ratione saepe eveniet commodi deserunt, distinctio qui natus sit atque sequi?
@@ -291,11 +285,11 @@ export default function Home() {
             </div>
 
             <Container>
-                <div className='text-center text-primary fs-1 fw-bold text-capitalize'>why choose us ?</div>
+                <div className='text-center thm-clr fs-1 fw-bold text-capitalize'>why choose us ?</div>
                 <Row className='my-5'>
                     <div className="col-md-6 border-5 border-end border-primary pe-5 ">
                         <h1>No need to wonder</h1>
-                        <h1 className='text-primary py-2'>Working with us in wonderful.</h1>
+                        <h1 className='thm-clr py-2'>Working with us in wonderful.</h1>
 
                         <div>
                             <p className='py-3 text-dark lh-base'>
@@ -306,7 +300,7 @@ export default function Home() {
                                 Before you start, now you can e-sign A digital NDA with us.
                             </h5>
 
-                            <button className="btn btn-primary btn-lg fw-bold my-5"> Sign NDA &nbsp; →</button>
+                            <button className="btn bg-theme text-white btn-lg fw-bold my-5"> Sign NDA &nbsp; →</button>
                         </div>
 
                     </div>
@@ -346,8 +340,10 @@ export default function Home() {
                 </Row>
             </Container>
 
-            {/* our services section */}
+            {/* starts our services section */}
             <OurServices/>
+            {/* end our services section */}
+
         </>
     );
 }

@@ -14,7 +14,7 @@ body, html {
 }
 
 .sticky-header.scrolled .top-bar {
-    display: none; /* Hide the top bar when scrolled */
+    display: none; 
 }
 
 .top-bar {
@@ -32,7 +32,7 @@ body, html {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 999; /* Ensure navbar sits above other content */
+    z-index: 999;
 }
 
 .main-navbar {
@@ -77,7 +77,6 @@ body, html {
     /* min-width: 10%;  */
     /* Increased width */
     /* width: auto;  */
-    /* Allow it to expand based on content */
     border-radius: 8px;
     z-index: 1000;
     transition: all 0.3s ease-in-out;
@@ -105,7 +104,6 @@ body, html {
     flex: 1;
     padding: 10px;
     /* text-align: center; */
-
     /* padding: 10px 25px; */
     border-bottom: 1px solid #f0f0f0;
     cursor: pointer;
@@ -123,11 +121,7 @@ body, html {
     margin-bottom: 1.5rem;
 }
 
-/* .submenu-item:last-child {
-    border-bottom: none; 
-} */
-
-/* Mega Dropdown Styles */
+/* starts Mega Dropdown Styles */
 .mega-dropdown .dropdown-menu {
     display: none;
     padding: 20px 0;
@@ -175,7 +169,7 @@ body, html {
     padding: 3px 5px;
 }
 
-/* Styling for submenu items */
+/* starts submenu items css*/
 .mega-dropdown-menu .carousel-inner {
     display: flex;
     flex-direction: column;
@@ -188,8 +182,8 @@ body, html {
         flex-direction: row;
         justify-content: space-between;
       
-        min-width: 30%; /* Increased width */
-        width: auto; /* Allow it to expand based on content */
+        min-width: 30%; 
+        width: auto;
     }
 
     .submenu-column {
@@ -204,12 +198,6 @@ body, html {
         font-size: 1.75rem;
     }
 }
-
-/* @media (max-width: 768px) {
-    .mega-dropdown-menu {
-        padding: 10px;
-    }
-} */
 
 @media (max-width: 768px) {
     .submenu {
