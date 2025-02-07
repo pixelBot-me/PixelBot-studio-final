@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Carousel, Col, Container, Row, Card, CardBody, CardImg, CardTitle, CardText, Image, CardSubtitle } from 'react-bootstrap';
-import '../../assets/css/home.css'; 
+import '../../assets/css/home.css';
 import pixelBotLogo from '../../assets/images/PixelBot_Logo_White.svg'
 import Header from '../../common/Header';
 // import Card from 'react-bootstrap/Card';
@@ -30,42 +30,46 @@ const techno = [image7, image8, image9, image10, image11, image12];
 
 
 export default function Home() {
-    
+
     useEffect(() => {
         const rows = document.querySelectorAll(".sticky-row");
         const rowOffsets = [];
-    
+
         rows.forEach((row, index) => {
-          rowOffsets.push(row.offsetTop);
+            rowOffsets.push(row.offsetTop);
         });
-    
+
         const handleScroll = () => {
-          const scrollY = window.scrollY;
-          rows.forEach((row, index) => {
-            if (scrollY >= rowOffsets[index] && scrollY < rowOffsets[index] + row.offsetHeight) {
-              row.classList.add("sticky-active");
-            } else {
-              row.classList.remove("sticky-active");
-            }
-          });
+            const scrollY = window.scrollY;
+            rows.forEach((row, index) => {
+                if (scrollY >= rowOffsets[index] && scrollY < rowOffsets[index] + row.offsetHeight) {
+                    row.classList.add("sticky-active");
+                } else {
+                    row.classList.remove("sticky-active");
+                }
+            });
         };
-    
+
         window.addEventListener("scroll", handleScroll);
-    
+
         return () => {
-          window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("scroll", handleScroll);
         };
-      }, []);
-    
+    }, []);
+
     return (
         <>
-            <Header  isHomePage={true}/>
+            <Header isHomePage={true} />
             {/* Hero Section */}
             <section className="hero-section">
                 <Container>
                     <div className="hero-content">
                         <div className="hero-text">
-                            <h1>PIXELBOT STUDIO</h1>
+                            <h1 style={{
+                                background: 'linear-gradient(45deg, #20274c, #7ebcebf0)',
+                                WebkitBackgroundClip: 'text',
+                                color: 'transparent'
+                            }} >PIXELBOT STUDIO</h1>
                             <p>Creating Amazing Digital Experiences</p>
                         </div>
                         <div className="hero-image">
@@ -101,11 +105,14 @@ export default function Home() {
                         </div>
                     </div> */}
                     <div className="floating-cards">
-                        {["9+", "1600+", "600+", "20+"].map((feature, index) => (
+                        {[{ feature: "9+", text: "Years In business" },
+                        { feature: "1600+", text: "Projects Delivered" },
+                        { feature: "600+", text: "Clients Relationships" },
+                        { feature: "20+", text: "Countries Served" }].map((item, index) => (
                             <div key={index} className="feature-card shadow bg-body rounded">
                                 <div className="card-body">
-                                    <div className="card-title fs-1">{feature}</div>
-                                    <div className="card-text">Some brief description here.</div>
+                                    <div className="card-title fs-1 fw-bolder">{item.feature}</div>
+                                    <div className="card-text">{item.text}</div>
                                 </div>
                             </div>
                         ))}
@@ -115,17 +122,21 @@ export default function Home() {
 
             {/* Text Section */}
             <Container>
-                <Row>
-                    <div className='text-center py-5 top-adjst mt-5'>
+                <Row className='my-5'>
+                    <div className='text-center py-5 top-adjst mt-5 '>
                         <h1 className='thm-clr fs-1'>Trusted by 600+ Startups and</h1>
-                        <h1 className='fs-1 py-1'>Enterprises across 20+ Nations</h1>
+                        <h1 className='fs-1 py-1' style={{
+                            background: 'linear-gradient(45deg, #20274c, #7ebcebf0)',
+                            WebkitBackgroundClip: 'text',
+                            color: 'transparent'
+                        }}>Enterprises across 20+ Nations</h1>
 
-                        <div className='py-5'>
+                        <p className='py-5 fst-normal lh-base'>
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt eligendi temporibus ut, quibusdam ipsam ratione vitae commodi, consequuntur aut officia sint illum? Nostrum fugit labore consequatur officiis unde maxime accusantium.
-                        </div>
+                        </p>
 
                         <div>
-                            <a href="#" className='text-decoration-none thm-clr fs-5 py-5'>Learn more about us →</a>
+                            <a href="/about-us" className='text-decoration-none thm-clr fs-5 py-5'>Learn more about us →</a>
                         </div>
                     </div>
                 </Row>
@@ -135,9 +146,9 @@ export default function Home() {
             <Container>
                 <Row className='overflow-hidn'>
                     <div className="image-row my-5">
-                        {images.map((image, index) => (
+                        {techno.map((image, index) => (
                             <Col key={index} className="image-item">
-                                <img src={image} alt={`Image ${index + 1}`} className="w-100" />
+                                <img src={image} alt={`Image ${index + 1}`} className="w-75 shadow mb-5 bg-body rounded" />
                             </Col>
                         ))}
 
@@ -384,63 +395,63 @@ export default function Home() {
             </Container>
 
             {/* starts our services section */}
-            <OurServices/>
+            <OurServices />
             {/* end our services section */}
 
             {/* diagonal multicolor background section */}
             <Container>
                 <Row className='diagonal-bg py-5 my-5'>
-                <div className='col-md-6'>
-                    <h1 className='text-capitalize pt-5'>what our amazing client</h1>
-                    <h1 className='text-capitalize text-primary'>say about us</h1>
+                    <div className='col-md-6'>
+                        <h1 className='text-capitalize pt-5'>what our amazing client</h1>
+                        <h1 className='text-capitalize text-primary'>say about us</h1>
 
-                    <p className='py-4 fw-normal'>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque numquam quisquam obcaecati suscipit illo, beatae at, labore veniam nostrum ducimus eos reprehenderit architecto in iure nisi. Vitae voluptas ab beatae.
-                    </p>
+                        <p className='py-4 fw-normal'>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque numquam quisquam obcaecati suscipit illo, beatae at, labore veniam nostrum ducimus eos reprehenderit architecto in iure nisi. Vitae voluptas ab beatae.
+                        </p>
 
 
-                </div>
-                <div className='col-md-6 d-flex gap-5'>
-                    <Card style={{ height: '15rem' }} className='p-3'>
-                        <CardBody>
-                            <CardText>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </CardText>
-                            <CardSubtitle><a href="" className='text-danger'>Read more</a></CardSubtitle>
-                           <div className='pt-5'>
-                           <CardTitle>Teaching Coordinator</CardTitle>
-                            <CardText>
-                                Lorem ipsum dolor sit .
-                            </CardText>
-                           </div>
-                        </CardBody>
+                    </div>
+                    <div className='col-md-6 d-flex gap-5'>
+                        <Card style={{ height: '15rem' }} className='p-3'>
+                            <CardBody>
+                                <CardText>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </CardText>
+                                <CardSubtitle><a href="" className='text-danger'>Read more</a></CardSubtitle>
+                                <div className='pt-5'>
+                                    <CardTitle>Teaching Coordinator</CardTitle>
+                                    <CardText>
+                                        Lorem ipsum dolor sit .
+                                    </CardText>
+                                </div>
+                            </CardBody>
 
-                    </Card>
+                        </Card>
 
-                    <Card style={{ height: '15rem' }} className='p-3'>
-                        <CardBody>
-                            <CardText>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </CardText>
-                            <CardSubtitle><a href="" className='text-danger'>Read more</a></CardSubtitle>
-                           <div className='pt-5'>
-                           <CardTitle>Teaching Coordinator</CardTitle>
-                            <CardText>
-                                Lorem ipsum dolor sit.
-                            </CardText>
-                           </div>
-                        </CardBody>
+                        <Card style={{ height: '15rem' }} className='p-3'>
+                            <CardBody>
+                                <CardText>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </CardText>
+                                <CardSubtitle><a href="" className='text-danger'>Read more</a></CardSubtitle>
+                                <div className='pt-5'>
+                                    <CardTitle>Teaching Coordinator</CardTitle>
+                                    <CardText>
+                                        Lorem ipsum dolor sit.
+                                    </CardText>
+                                </div>
+                            </CardBody>
 
-                    </Card>
+                        </Card>
 
-                </div>
+                    </div>
 
 
 
                 </Row>
             </Container>
 
-            <GetInTouch/>
+            <GetInTouch />
         </>
     );
 }

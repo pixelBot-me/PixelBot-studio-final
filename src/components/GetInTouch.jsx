@@ -2,6 +2,8 @@ import React from 'react'
 import { Container, Row, Form, Button, } from 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../assets/css/getInTouch.css'
+// import { IoLogoWhatsapp } from "react-icons/io";
+
 
 export default function GetInTouch() {
     return (
@@ -35,7 +37,7 @@ export default function GetInTouch() {
                                 <div className='d-flex py-5'>
                                     <div className='col-md-3'>
                                         <h3 className='text-danger'>🟢</h3>
-
+                                        {/* <IoLogoWhatsapp style={{ color: 'green', fontSize: '2rem' }}/> */}
                                     </div>
                                     <div className='col-md-9'>
                                         <h4>Whats App</h4>

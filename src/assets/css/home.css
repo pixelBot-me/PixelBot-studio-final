@@ -1,11 +1,16 @@
 *{
     box-sizing: border-box;
+    font-size: 15px;
 }
+
+
 
 .hero-section {
     position: relative !important;
     height: 90vh;
-    background: #20274c;
+    /* background: #20274c; */
+    background: url('../images/header-bg.jpg') no-repeat;
+    background-size: cover;
     color: white;
     display: flex;
     align-items: center;
@@ -21,11 +26,12 @@
 }
 
 .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 4rem !important;
 }
 
 .hero-text p {
-    font-size: 1.2rem;
+    font-size: 2rem;
+    text-align: center;
 }
 
 .hero-image img {
@@ -123,11 +129,11 @@ a.text-primary:hover {
 
 @keyframes scrollRightToLeft {
     0% {
-        transform: translateX(100%);
+        transform: translateX(50%);
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-8%);
     }
 }
 
@@ -290,3 +296,8 @@ a.text-primary:hover {
     overflow: hidden;
     flex-wrap: nowrap; 
 }
+
+/* 
+.text-bg-color{
+    color: #7ebcebf0;
+} */
