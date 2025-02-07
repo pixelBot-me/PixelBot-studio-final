@@ -82,7 +82,7 @@ export default function GetInTouch() {
                         <Container fluid className="bg-pink shadow bg-body rounded">
                             <div className="contact-form-wrapper d-flex justify-content-center">
                                 <Form className="contact-form">
-                                    <h5 className="title">Contact us</h5>
+                                    <h5 className="title">Collaborate With Us</h5>
                                     <p className="description">
                                         Feel free to contact us if you need any assistance, any help, or another question.
                                     </p>

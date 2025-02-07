@@ -143,17 +143,15 @@ export default function Home() {
             </Container>
 
             {/* show branding logos */}
-            <Container>
-                <Row className='overflow-hidn'>
+            <Container className="overflow-hidden">
+                <Row>
                     <div className="image-row my-5">
                         {techno.map((image, index) => (
                             <Col key={index} className="image-item">
                                 <img src={image} alt={`Image ${index + 1}`} className="w-75 shadow mb-5 bg-body rounded" />
                             </Col>
                         ))}
-
                     </div>
-
                 </Row>
             </Container>
 
@@ -384,7 +382,7 @@ export default function Home() {
                 </div>
             </Container> */}
 
-            <Container>
+            <Container className='overflow-hidden'>
                 <div className="container fluid multi-layer-image-row1 mb-4">
                     {techno.map((image, index) => (
                         <Col key={index} className="multi-layer-image-item1">

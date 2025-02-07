@@ -94,6 +94,7 @@ a.text-primary:hover {
     animation: scrollRightToLeft 15s linear infinite;
     width: 100%;
     flex-wrap: nowrap; 
+    justify-content: start;
 }
 
 .image-item {
