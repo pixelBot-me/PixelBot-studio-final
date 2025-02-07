@@ -6,21 +6,34 @@ import logoDark from "../assets/images/PixelBot_Logo_Dark.svg";
 import logoLight from "../assets/images/PixelBot_Logo_White.svg";
 import { Accordion, Card } from "react-bootstrap";
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 
-export default function Header() {
+export default function Header({ isHomePage }) {
     const [scrolling, setScrolling] = useState(false);
     const [menuOpen, setMenuOpen] = useState(null);
     const [mobileMenu, setMobileMenu] = useState(false);
     const [selectedService, setSelectedService] = useState(null);
+    const [logo, setLogo] = useState(logoLight); 
+    const location = useLocation();
+
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolling(window.scrollY > 70);
+            // setScrolling(window.scrollY > 70);
+
+            if (window.scrollY > 70) {
+                setScrolling(true);
+                setLogo(logoDark);
+            } else {
+                setScrolling(false);
+                setLogo(isHomePage ? logoLight : logoDark); 
+            }
+
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [isHomePage]);
 
     const services = [
         { id: 1, name: "Software Development", details: "1 Detailed content for Software Development." },
@@ -30,7 +43,11 @@ export default function Header() {
         { id: 5, name: "Data Analytics", details: "5 Detailed content for Data Analytics." },
     ];
     useEffect(() => {
-        setSelectedService(services[1]); // Set the first service by default
+        if (location.pathname !== '/') {
+            setLogo(logoDark);
+        }
+         
+        setSelectedService(services[1]); 
     }, []);
 
 
@@ -38,32 +55,55 @@ export default function Header() {
         setSelectedService(service);
     };
 
+    // function for header bg change
+    const getNavbarStyles = () => {
+        if (!isHomePage || location.pathname === '/about-us') {
+          return {
+            backgroundColor: 'white',
+            color: 'black',
+          };
+        }
+    
+        if (scrolling) {
+          return {
+            backgroundColor: 'white',
+            color: 'black',
+          };
+        }
+    
+        return {
+          backgroundColor: 'transparent',
+          color: 'white',
+        };
+      };
+    
+    
     return (
         <>
             {/* Sticky Header with Top Bar & Navbar */}
-            <div className={`sticky-header ${scrolling ? "scrolled" : ""}`}>
+            <div className={`sticky-header ${scrolling ? "scrolled" : ""}`} style={getNavbarStyles()}>
                 {/* Top Bar */}
                 {!scrolling && (
-                    <div className="top-bar d-flex justify-content-center">
+                    <div className="top-bar d-flex justify-content-center " style={{ backgroundColor: getNavbarStyles().backgroundColor, color: getNavbarStyles().color }}>
                         <div>
                             📩 &nbsp;
-                            <a href="mailto:info@pixelbotstudio.com" className="text-decoration-none text-white">info@pixelbotstudio.com  &nbsp;| </a>
+                            <a href="mailto:info@pixelbotstudio.com" className="text-decoration-none" style={{ backgroundColor: getNavbarStyles().backgroundColor, color: getNavbarStyles().color }}>info@pixelbotstudio.com  &nbsp;| </a>
                         </div>
                         <div>
-                            <a href="tel:+91-8446297665" className="text-decoration-none text-white"> &nbsp;+91-8446297665</a>
+                            <a href="tel:+91-8446297665" className="text-decoration-none" style={{ backgroundColor: getNavbarStyles().backgroundColor, color: getNavbarStyles().color }}> &nbsp;+91-8446297665</a>
                         </div>
                     </div>
                 )}
 
                 {/* Navbar */}
-                <Navbar expand="lg" className={`main-navbar ${scrolling ? "sticky-top" : ""}`}>
+                <Navbar expand="lg" className={`main-navbar ${scrolling ? "sticky-top" : ""}`}  style={{ backgroundColor: getNavbarStyles().backgroundColor, color: getNavbarStyles().color }}>
                     <Container>
                         <Navbar.Brand>
+                            <a href="/">
                             <img
-                                src={scrolling ? logoDark : logoLight}
+                                src={logo}
                                 alt="Logo"
-                                className="logo"
-                            />
+                                className="logo"/></a>
                         </Navbar.Brand>
                         <Navbar.Toggle onClick={() => setMobileMenu(!mobileMenu)} />
                         <Navbar.Collapse className={mobileMenu ? "show" : ""}>
@@ -73,7 +113,7 @@ export default function Header() {
                                     onMouseEnter={() => setMenuOpen(0)}
                                     onMouseLeave={() => setMenuOpen(null)}
                                 >
-                                    <Nav.Link href="#" className="menu-link">
+                                    <Nav.Link href="#" className="menu-link" style={{ color: getNavbarStyles().color }}>
                                         Company &darr;
                                     </Nav.Link>
                                     {menuOpen === 0 && (

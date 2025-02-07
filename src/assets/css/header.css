@@ -57,7 +57,7 @@ body, html {
 }
 
 .menu-link {
-    color: white !important;
+    color: inherit !important;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
@@ -84,6 +84,7 @@ body, html {
 }
 
 .submenu-column {
+    color: black;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;

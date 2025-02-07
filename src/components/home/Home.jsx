@@ -22,6 +22,7 @@ import image12 from '../../assets/images/python.jpg';
 import OurServices from '../OurServices';
 import '../../assets/css/common.css';
 import GetInTouch from '../GetInTouch';
+import { useLocation } from 'react-router-dom';
 
 const images = [image1, image2, image3, image4, image5, image6];
 
@@ -29,7 +30,7 @@ const techno = [image7, image8, image9, image10, image11, image12];
 
 
 export default function Home() {
-
+    
     useEffect(() => {
         const rows = document.querySelectorAll(".sticky-row");
         const rowOffsets = [];
@@ -58,7 +59,7 @@ export default function Home() {
     
     return (
         <>
-            <Header />
+            <Header  isHomePage={true}/>
             {/* Hero Section */}
             <section className="hero-section">
                 <Container>
