@@ -296,7 +296,7 @@ export default function Home() {
                 </Container>
             </div>
 
-            <Container>
+            <Container className='overflow-hidden'>
                 <div className='text-center thm-clr fs-1 fw-bold text-capitalize'>why choose us ?</div>
                 <Row className='my-5'>
                     <div className="col-md-6 border-5 border-end border-primary pe-5 ">
@@ -352,7 +352,7 @@ export default function Home() {
             </Container>
 
             {/* starts multi layer carousel section */}
-            <Container>
+            {/* <Container>
                 <div className="container fluid multi-layer-image-row1 mt-5">
                     {techno.map((image, index) => (
                         <Col key={index} className="multi-layer-image-item1">
@@ -370,7 +370,7 @@ export default function Home() {
                         </Col>
                     ))}
                 </div>
-            </Container>
+            </Container> */}
 
             <Container>
                 <div className="container fluid multi-layer-image-row1 mb-4">
