@@ -7,7 +7,10 @@ import logoLight from "../assets/images/PixelBot_Logo_White.svg";
 import { Accordion, Card } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-
+import { IoIosPhonePortrait } from "react-icons/io";
+import { MdOutlineMail } from "react-icons/md";
+import { HiOutlineMailOpen } from "react-icons/hi";
+// ye icon show krna h sir...
 
 export default function Header({ isHomePage }) {
     const [scrolling, setScrolling] = useState(false);
@@ -84,12 +87,16 @@ export default function Header({ isHomePage }) {
             <div className={`sticky-header ${scrolling ? "scrolled" : ""}`} style={getNavbarStyles()}>
                 {/* Top Bar */}
                 {!scrolling && (
-                    <div className="top-bar d-flex justify-content-center " style={{ backgroundColor: getNavbarStyles().backgroundColor, color: getNavbarStyles().color }}>
+                    <div className="top-bar d-flex justify-content-center shadow rounded mb-1" style={{ backgroundColor: getNavbarStyles().backgroundColor, color: getNavbarStyles().color }}>
                         <div>
-                            📩 &nbsp;
-                            <a href="mailto:info@pixelbotstudio.com" className="text-decoration-none" style={{ backgroundColor: getNavbarStyles().backgroundColor, color: getNavbarStyles().color }}>info@pixelbotstudio.com  &nbsp;| </a>
+                            <MdOutlineMail/>&nbsp;
+                            {/* <HiOutlineMailOpen className="email-open1"/> */}
+
+                             &nbsp;
+                            <a href="mailto:info@pixelbotstudio.com" className="text-decoration-none" style={{ backgroundColor: getNavbarStyles().backgroundColor, color: getNavbarStyles().color }}>info@pixelbotstudio.com  &nbsp;| &nbsp;</a>
                         </div>
                         <div>
+                        <IoIosPhonePortrait />
                             <a href="tel:+91-8446297665" className="text-decoration-none" style={{ backgroundColor: getNavbarStyles().backgroundColor, color: getNavbarStyles().color }}> &nbsp;+91-8446297665</a>
                         </div>
                     </div>
