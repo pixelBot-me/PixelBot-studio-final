@@ -1,171 +1,229 @@
-/* General */
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-  }
-  
-  /* Top Bar */
-  .top-bar {
+}
+
+.sticky-header {
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+}
+
+.sticky-header.scrolled .top-bar {
+    display: none; /* Hide the top bar when scrolled */
+}
+
+.top-bar {
     background: transparent;
-    color: black;
+    color: white;
     padding: 10px 0;
     text-align: center;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-  }
-  
-  .top-bar.scrolled {
-    background: white;
-    color: black;
-  }
-  
-  /* Navbar */
-  .main-navbar {
-    background: transparent;
-    color: black;
-    transition: background 0.3s ease-in-out, padding 0.3s ease-in-out;
-  }
-  
-  .main-navbar.scrolled {
+}
+
+.sticky-header.scrolled .main-navbar {
     background: white !important;
-  }
-  
-  .logo {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999; /* Ensure navbar sits above other content */
+}
+
+.main-navbar {
+    background: transparent;
+    transition: background 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.sticky-header.scrolled .main-navbar {
+    background: white;
+}
+
+.logo {
     height: 50px;
     transition: all 0.3s ease-in-out;
-  }
-  
-  .main-navbar.scrolled .logo {
-    height: 40px;
-  }
-  
-  /* Navbar Links */
-  .nav-item {
+}
+
+.nav-item {
     position: relative;
     margin: 0 15px;
-  }
-  
-  .nav-item:hover .submenu {
-    display: flex;
-  }
-  
-  .nav-link {
-    color: black !important;
+}
+
+.menu-link {
+    color: white !important;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
-  }
-  
-  .main-navbar.scrolled .nav-link {
+}
+
+.sticky-header.scrolled .menu-link {
     color: black !important;
-  }
-  
-  /* Submenu */
-  .submenu {
+}
+
+.submenu {
     position: absolute;
     top: 100%;
     left: 0;
     background: white;
-    padding: 10px;
-    display: none;
-    flex-direction: column;
-    min-width: 150px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    display: none;
+    min-width: 100%; /* Increased width */
+    width: auto; /* Allow it to expand based on content */
+    border-radius: 8px;
+    z-index: 1000;
     transition: all 0.3s ease-in-out;
-  }
-  
-  .submenu-item {
+
+}
+
+.submenu-column {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-left: 50px
+}
+
+.submenu-column a {
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.submenu-column a:hover {
+    color: #ff3546;
+}
+
+.submenu-item {
+    flex: 1;
     padding: 10px;
+    text-align: center;
+
+    /* padding: 10px 25px; */
+    border-bottom: 1px solid #f0f0f0;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
-  }
-  
-  .submenu-item:hover {
-    background: #f4f4f4;
-  }
-  
-  /* Hero Section */
-  .hero-section {
-    position: relative;
-    height: 70vh;
-    background: #0A192F;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-  }
-  
-  .hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-  
-  .hero-text p {
-    font-size: 1.2rem;
-  }
-  
-  .hero-image img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Floating Cards */
-  .floating-cards {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 15px;
-  }
-  
-  .feature-card {
-    width: 220px;
-    background: white;
-    color: black;
-    text-align: center;
-    padding: 15px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  /* Sticky Navbar */
-  .sticky-top {
-    position: fixed;
-    top: 0;
+}
+.stats-item h2 {
+    margin-bottom: 5px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.submenu h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.submenu-item:last-child {
+    border-bottom: none; 
+    /* Remove bottom border from last item */
+}
+
+/* Mega Dropdown Styles */
+.mega-dropdown .dropdown-menu {
+    display: none;
+    padding: 20px 0;
     width: 100%;
-    z-index: 1000;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .hero-content {
-      flex-direction: column;
-      text-align: center;
+    box-shadow: none;
+    border: 1px solid #efefef;
+    background-color: white;
+}
+
+.mega-dropdown:hover .dropdown-menu {
+    display: block;
+    width: auto;
+    padding: 20px;
+}
+
+.mega-dropdown-menu > li {
+    list-style: none;
+    padding: 10px 20px;
+}
+
+.mega-dropdown-menu > li > a {
+    padding: 6px 15px;
+    color: #656565;
+    text-decoration: none;
+}
+
+.mega-dropdown-menu .dropdown-header {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff3546;
+}
+
+.mega-dropdown-menu > li {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+.mega-dropdown-menu > li ul {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.mega-dropdown-menu > li ul li {
+    padding: 3px 5px;
+}
+
+/* Styling for submenu items */
+.mega-dropdown-menu .carousel-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .submenu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      
+        min-width: 100%; /* Increased width */
+        width: auto; /* Allow it to expand based on content */
     }
-  
-    .hero-image {
-      margin-top: 20px;
+
+    .submenu-column {
+        flex: 1;
     }
-  
-    .floating-cards {
-      flex-direction: column;
-      top: 80%;
+
+    .stats-item {
+        width: 45%;
     }
-  
-    .footer-row {
-      flex-direction: column;
-      text-align: center;
+
+    .submenu h4 {
+        font-size: 1.75rem;
     }
-  
-    .footer-bottom {
-      flex-direction: column;
-      text-align: center;
+}
+
+/* @media (max-width: 768px) {
+    .mega-dropdown-menu {
+        padding: 10px;
     }
-  }
-  
+} */
+
+@media (max-width: 768px) {
+    .submenu {
+        max-width: 90%;
+        padding: 15px;
+        overflow-y: auto; 
+    }
+
+    .submenu-column {
+        margin-bottom: 15px;
+    }
+
+    .stats-item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .stats-item h2 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Container, Navbar, Nav, Button, Card } from "react-bootstrap";
-import '../assets/css/header.css';
+import { Container, Navbar, Nav, Button } from "react-bootstrap";
+import "../assets/css/header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logoDark from "../assets/images/PixelBot_Logo_Dark.svg";
 import logoLight from "../assets/images/PixelBot_Logo_White.svg";
+import { Accordion, Card } from "react-bootstrap";
+import { Link } from 'react-router-dom';
+
 
 export default function Header() {
     const [scrolling, setScrolling] = useState(false);
     const [menuOpen, setMenuOpen] = useState(null);
     const [mobileMenu, setMobileMenu] = useState(false);
+    const [selectedService, setSelectedService] = useState(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,76 +22,217 @@ export default function Header() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const services = [
+        { id: 1, name: "Software Development", details: "1 Detailed content for Software Development." },
+        { id: 2, name: "Digital Marketing", details: "2 Detailed content for Digital Marketing." },
+        { id: 3, name: "UI/UX Design", details: "3 Detailed content for UI/UX Design." },
+        { id: 4, name: "Cloud Services", details: "4 Detailed content for Cloud Services." },
+        { id: 5, name: "Data Analytics", details: "5 Detailed content for Data Analytics." },
+    ];
+    useEffect(() => {
+        setSelectedService(services[0]); // Set the first service by default
+    }, []);
+
+
+    const handleServiceClick = (service) => {
+        setSelectedService(service);
+    };
+
     return (
         <>
-            {/* Top Bar */}
-            <div className={`top-bar ${scrolling ? "scrolled" : ""}`}>
-                <p className="text-center">Welcome to Our Website</p>
-            </div>
+            {/* Sticky Header with Top Bar & Navbar */}
+            <div className={`sticky-header ${scrolling ? "scrolled" : ""}`}>
+                {/* Top Bar */}
+                {!scrolling && (
+                    <div className="top-bar d-flex justify-content-center">
+                        <div>
+                            📩 &nbsp;
+                            <a href="mailto:info@pixelbotstudio.com" className="text-decoration-none text-white">info@pixelbotstudio.com  &nbsp;| </a>
+                        </div>
+                        <div>
+                            <a href="tel:+91-8446297665" className="text-decoration-none text-white"> &nbsp;+91-8446297665</a>
+                        </div>
+                    </div>
+                )}
 
-            {/* Navbar */}
-            <Navbar expand="lg" className={`main-navbar sticky-top ${scrolling ? "scrolled" : ""}`}>
-                <Container>
-                    <Navbar.Brand>
-                        <img
-                            src={scrolling ? logoDark : logoLight}
-                            alt="Logo"
-                            className="logo"
-                        />
-                    </Navbar.Brand>
-                    <Navbar.Toggle onClick={() => setMobileMenu(!mobileMenu)} />
-                    <Navbar.Collapse className={mobileMenu ? "show" : ""}>
-                        <Nav className="mx-auto">
-                            {["Home", "About", "Services", "Portfolio", "Blog", "Contact"].map((item, index) => (
+                {/* Navbar */}
+                <Navbar expand="lg" className={`main-navbar ${scrolling ? "sticky-top" : ""}`}>
+                    <Container>
+                        <Navbar.Brand>
+                            <img
+                                src={scrolling ? logoDark : logoLight}
+                                alt="Logo"
+                                className="logo"
+                            />
+                        </Navbar.Brand>
+                        <Navbar.Toggle onClick={() => setMobileMenu(!mobileMenu)} />
+                        <Navbar.Collapse className={mobileMenu ? "show" : ""}>
+                            <Nav className="mx-auto">
+                                {/* Static Nav Items */}
                                 <div
-                                    key={index}
                                     className="nav-item"
-                                    onMouseEnter={() => setMenuOpen(index)}
-                                    onMouseLeave={() => setMenuOpen(null)}>
-                                    <Nav.Link href="#">{item}</Nav.Link>
-                                    {menuOpen === index && (
-                                        <div className="submenu">
-                                            <div className="submenu-item">home1</div>
-                                            <div className="submenu-item">home 2</div>
-                                            <div className="submenu-item">home 3</div>
+                                    onMouseEnter={() => setMenuOpen(0)}
+                                    onMouseLeave={() => setMenuOpen(null)}
+                                >
+                                    <Nav.Link href="#" className="menu-link">
+                                        Company &darr;
+                                    </Nav.Link>
+                                    {menuOpen === 0 && (
+                                        <div className="submenu d-flex flex-row">
+                                            {/* First Column Section */}
+                                            <div className="submenu-row d-flex flex-column mb-4">
+                                                <h6 className="text-danger mb-4">The Company</h6>
+                                                <a href="/about-us" className="text-dark text-decoration-none py-2">About Us</a>
+                                                <a href="" className="text-dark text-decoration-none py-2">Clients</a>
+                                                <a href="" className="text-dark text-decoration-none py-2">Careers</a>
+                                            </div>
+
+                                            {/* Second Column Section */}
+                                            <div className="submenu-column d-flex flex-column ">
+                                                <a href="" className="text-dark text-decoration-none mb-3 text-break">Imagination Meets, Implementation</a>
+                                                <div className="d-flex justify-content-between">
+                                                    <div className="stats-item text-center">
+                                                        <h2>9+</h2>
+                                                        <p>Years in Business</p>
+                                                    </div>
+                                                    <div className="stats-item text-center">
+                                                        <h2>100+</h2>
+                                                        <p>Dummy Text</p>
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex justify-content-between mt-3">
+                                                    <div className="stats-item text-center">
+                                                        <h2>9+</h2>
+                                                        <p>Years in Business</p>
+                                                    </div>
+                                                    <div className="stats-item text-center">
+                                                        <h2>100+</h2>
+                                                        <p>Dummy Text</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     )}
                                 </div>
-                            ))}
-                        </Nav>
-                        <Button variant="outline-danger" className="contact-btn">
-                            Get in Touch
-                        </Button>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
+                                <div
+                                    className="nav-item"
+                                    onMouseEnter={() => setMenuOpen(1)}
+                                    onMouseLeave={() => setMenuOpen(null)}
+                                >
+                                    <Nav.Link href="#" className="menu-link">
+                                        Services &darr;
+                                    </Nav.Link>
+                                    {menuOpen === 1 && (
+                                        <div className="submenu">
+                                            <div className="submenu-column">
+                                                <h3>OurServices</h3>
+                                                {services.map((service) => (
+                                                    <div key={service.id} onClick={() => handleServiceClick(service)} className="submenu-item">
+                                                        <a href="#" className="text-dark text-decoration-none">{service.name}</a>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                            <div className="submenu-column">
+                                                {selectedService && (
+                                                    <>
+                                                        <h5>{selectedService.name}</h5>
+                                                        <p>{selectedService.details}</p>
+                                                        <hr />
+                                                        <div className="d-flex">
+                                                            <div className="stats-item">
 
-            {/* Hero Section */}
-            <section className="hero-section">
-                <Container>
-                    <div className="hero-content">
-                        <div className="hero-text">
-                            <h1>Welcome to Our Website</h1>
-                            <p>Creating Amazing Digital Experiences</p>
-                        </div>
-                        <div className="hero-image">
-                            <img src="/hero-image.png" alt="Hero" />
-                        </div>
-                    </div>
+                                                                <div>
+                                                                    <a href="#">Link 1</a>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#">Link 2</a>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#">Link 3</a>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#">Link 4</a>
+                                                                </div>                                                                                                                </div>
+                                                            <div className="stats-item">
 
-                    {/* Four Floating Cards */}
-                    <div className="floating-cards">
-                        {["Feature 1", "Feature 2", "Feature 3", "Feature 4"].map((feature, index) => (
-                            <Card key={index} className="feature-card">
-                                <Card.Body>
-                                    <Card.Title>{feature}</Card.Title>
-                                    <Card.Text>Some brief description here.</Card.Text>
-                                </Card.Body>
-                            </Card>
-                        ))}
-                    </div>
-                </Container>
-            </section>
+                                                                <div>
+                                                                    <a href="#">Link 1</a>
+                                                                </div>                                                             <div>
+                                                                    <a href="#">Link 2</a>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#">Link 3</a>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#">Link 4</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </>
+                                                )}
+                                            </div>
+                                        </div>
+
+                                    )}
+
+                                </div>
+
+                                <div
+                                    className="nav-item"
+                                    onMouseEnter={() => setMenuOpen(3)}
+                                    onMouseLeave={() => setMenuOpen(null)}
+                                >
+                                    <Nav.Link href="#" className="menu-link">
+                                        Portfolio
+                                    </Nav.Link>
+                                    {/* {menuOpen === 3 && (
+                                        <div className="submenu d-flex">
+                                            <div className="submenu-item">
+                                                <a href="" className="text-dark text-decoration-none">Option 1</a>
+                                            </div>
+                                        </div>
+                                    )} */}
+                                </div>
+                                <div
+                                    className="nav-item"
+                                    onMouseEnter={() => setMenuOpen(4)}
+                                    onMouseLeave={() => setMenuOpen(null)}
+                                >
+                                    <Nav.Link href="#" className="menu-link">
+                                        Blog
+                                    </Nav.Link>
+                                    {/* {menuOpen === 4 && (
+                                        <div className="submenu d-flex">
+                                            <div className="submenu-item">
+                                                <a href="" className="text-dark text-decoration-none">Option 1</a>
+                                            </div>
+                                        </div>
+                                    )} */}
+                                </div>
+                                <div
+                                    className="nav-item"
+                                    onMouseEnter={() => setMenuOpen(5)}
+                                    onMouseLeave={() => setMenuOpen(null)}
+                                >
+                                    <Nav.Link href="#" className="menu-link">
+                                        Contact
+                                    </Nav.Link>
+                                    {/* {menuOpen === 5 && (
+                                        <div className="submenu d-flex">
+                                            <div className="submenu-item">
+                                                <a href="" className="text-dark text-decoration-none">Option 1</a>
+                                            </div>
+                                        </div>
+                                    )} */}
+                                </div>
+                            </Nav>
+                            <Button variant="danger" className="contact-btn">
+                                Get in Touch
+                            </Button>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+            </div>
         </>
     );
 }

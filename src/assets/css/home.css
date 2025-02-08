@@ -1,0 +1,108 @@
+/* Home.css */
+.hero-section {
+    position: relative !important;
+    height: 90vh;
+    background: #0A192F;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    width: 100%;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Floating Cards */
+.floating-cards {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 50px;
+}
+
+.feature-card {
+    width: 220px;
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); */
+    border-radius: 8px;  
+}
+
+/* New section below hero section */
+.text-center {
+    text-align: center;
+}
+
+.fs-1 {
+    font-size: 2rem;
+}
+
+.text-primary {
+    color: #007bff;
+}
+
+.py-5 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+a.text-primary {
+    font-size: 1.2rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+a.text-primary:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        
+    }
+
+    .hero-image {
+        margin-top: 20px;
+    }
+
+    .floating-cards {
+        flex-direction: column;
+        top: 95%;
+    }
+
+    .feature-card {
+        width: 100%; /* Make cards take full width */
+        box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.1);
+        
+    }
+
+    .top-adjst{
+        margin-top: 140% !important;
+    }
+    
+}
