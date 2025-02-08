@@ -3,7 +3,7 @@ import { Container, Row, Form, Button, } from 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../assets/css/getInTouch.css'
 // import { IoLogoWhatsapp } from "react-icons/io";
-import { FcCallback } from "react-icons/fc";
+import { PiPhoneCallFill } from "react-icons/pi";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { TfiEmail } from "react-icons/tfi";
 
@@ -28,7 +28,7 @@ export default function GetInTouch() {
                             <Row className='py-5'>
                                 <div className='d-flex'>
                                     <div className='col-md-3'>
-                                        <FcCallback className='fs-1' />
+                                        <PiPhoneCallFill className='fs-1 thm-clr' />
                                     </div>
                                     <div className='col-md-9'>
                                         <h4>Call</h4>
@@ -38,7 +38,7 @@ export default function GetInTouch() {
 
                                 <div className='d-flex py-5'>
                                     <div className='col-md-3'>
-                                        <IoLogoWhatsapp className='fs-1 text-success'/>
+                                        <IoLogoWhatsapp className='fs-1 thm-clr'/>
 
                                         {/* <IoLogoWhatsapp style={{ color: 'green', fontSize: '2rem' }}/> */}
                                     </div>
@@ -64,7 +64,7 @@ export default function GetInTouch() {
 
                                 <div className='d-flex'>
                                     <div className='col-md-3'>
-                                    <TfiEmail className='fs-1 text-danger'/>
+                                    <TfiEmail className='fs-1 thm-clr'/>
 
 
                                     </div>
