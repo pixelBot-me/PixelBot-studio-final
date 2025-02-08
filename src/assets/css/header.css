@@ -14,7 +14,7 @@ body, html {
 }
 
 .sticky-header.scrolled .top-bar {
-    display: none; /* Hide the top bar when scrolled */
+    display: none; 
 }
 
 .top-bar {
@@ -23,6 +23,8 @@ body, html {
     padding: 10px 0;
     text-align: center;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    
+    
 }
 
 .sticky-header.scrolled .main-navbar {
@@ -32,7 +34,7 @@ body, html {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 999; /* Ensure navbar sits above other content */
+    z-index: 999;
 }
 
 .main-navbar {
@@ -50,12 +52,14 @@ body, html {
 }
 
 .nav-item {
-    position: relative;
+    /* position: relative; */
     margin: 0 15px;
+    /* color: white; */
+    /* background-color: red; */
 }
 
 .menu-link {
-    color: white !important;
+    color: inherit !important;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
@@ -66,14 +70,15 @@ body, html {
 
 .submenu {
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 80% ;
+    left: 30% ;
     background: white;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1); */
     padding: 20px 30px;
     display: none;
-    min-width: 100%; /* Increased width */
-    width: auto; /* Allow it to expand based on content */
+    /* min-width: 10%;  */
+    /* Increased width */
+    /* width: auto;  */
     border-radius: 8px;
     z-index: 1000;
     transition: all 0.3s ease-in-out;
@@ -81,6 +86,7 @@ body, html {
 }
 
 .submenu-column {
+    color: black;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
@@ -100,8 +106,7 @@ body, html {
 .submenu-item {
     flex: 1;
     padding: 10px;
-    text-align: center;
-
+    /* text-align: center; */
     /* padding: 10px 25px; */
     border-bottom: 1px solid #f0f0f0;
     cursor: pointer;
@@ -119,12 +124,7 @@ body, html {
     margin-bottom: 1.5rem;
 }
 
-.submenu-item:last-child {
-    border-bottom: none; 
-    /* Remove bottom border from last item */
-}
-
-/* Mega Dropdown Styles */
+/* starts Mega Dropdown Styles */
 .mega-dropdown .dropdown-menu {
     display: none;
     padding: 20px 0;
@@ -172,7 +172,7 @@ body, html {
     padding: 3px 5px;
 }
 
-/* Styling for submenu items */
+/* starts submenu items css*/
 .mega-dropdown-menu .carousel-inner {
     display: flex;
     flex-direction: column;
@@ -180,12 +180,13 @@ body, html {
 
 @media (min-width: 768px) {
     .submenu {
+        /* background-color: yellow; */
         display: flex;
         flex-direction: row;
         justify-content: space-between;
       
-        min-width: 100%; /* Increased width */
-        width: auto; /* Allow it to expand based on content */
+        min-width: 30%; 
+        width: auto;
     }
 
     .submenu-column {
@@ -200,12 +201,6 @@ body, html {
         font-size: 1.75rem;
     }
 }
-
-/* @media (max-width: 768px) {
-    .mega-dropdown-menu {
-        padding: 10px;
-    }
-} */
 
 @media (max-width: 768px) {
     .submenu {

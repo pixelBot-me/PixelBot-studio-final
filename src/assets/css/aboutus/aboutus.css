@@ -1,0 +1,11 @@
+
+.abt-section {
+    height: 70vh;
+    /* background: #20274c; */
+    background: url('../../images/abot-us/abt-hero-section.jpg') no-repeat;
+    background-size: cover;
+    color: white;
+   
+    padding: 15% 0;
+    width: 100%;
+}
