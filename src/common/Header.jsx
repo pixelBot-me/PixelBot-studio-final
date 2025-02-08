@@ -4,12 +4,10 @@ import "../assets/css/header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logoDark from "../assets/images/PixelBot_Logo_Dark.svg";
 import logoLight from "../assets/images/PixelBot_Logo_White.svg";
-import { Accordion, Card } from "react-bootstrap";
-import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { IoIosPhonePortrait } from "react-icons/io";
 import { MdOutlineMail } from "react-icons/md";
-import { HiOutlineMailOpen } from "react-icons/hi";
+import { IoIosArrowDown } from "react-icons/io";
 // ye icon show krna h sir...
 
 export default function Header({ isHomePage }) {
@@ -121,7 +119,8 @@ export default function Header({ isHomePage }) {
                                     onMouseLeave={() => setMenuOpen(null)}
                                 >
                                     <Nav.Link href="#" className="menu-link" style={{ color: getNavbarStyles().color }}>
-                                        Company &darr;
+                                        Company <IoIosArrowDown />
+
                                     </Nav.Link>
                                     {menuOpen === 0 && (
                                         <div className="submenu d-flex flex-row shadow bg-body rounded rounded-4">
@@ -147,11 +146,11 @@ export default function Header({ isHomePage }) {
                                                 </div>
                                                 <div className="d-flex justify-content-between mt-3">
                                                     <div className="text-dark">
-                                                        <h2>9+</h2>
+                                                        <h2>19+</h2>
                                                         <p>Years in Business</p>
                                                     </div>
                                                     <div className="text-dark">
-                                                        <h2>100+</h2>
+                                                        <h2>18+</h2>
                                                         <p>Dummy Text</p>
                                                     </div>
                                                 </div>
@@ -165,7 +164,7 @@ export default function Header({ isHomePage }) {
                                     onMouseLeave={() => setMenuOpen(null)}
                                 >
                                     <Nav.Link href="#" className="menu-link">
-                                        Services &darr;
+                                        Services <IoIosArrowDown />
                                     </Nav.Link>
                                     {menuOpen === 1 && (
                                         <div className="submenu shadow bg-body rounded rounded-4">
